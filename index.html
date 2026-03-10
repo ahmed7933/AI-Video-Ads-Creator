@@ -1,17 +1,12 @@
-<html lang="ar" dir="rtl" style="scroll-behavior: smooth;">
-
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" style="scroll-behavior: smooth;">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>مصنع الإعلانات بالذكاء الاصطناعي</title>
+<title>كيمياء الإعلانات بالذكاء الاصطناعي</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Tajawal:wght@300;400;500;700;900&display=swap');
 
-  .table-wrapper { width: 100%; overflow-x: auto; margin: 20px 0; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); }
-.table-wrapper .data-table { margin: 0; border: none; }
-  
   :root {
     --gold: #C9A84C;
     --gold-light: #F0D080;
@@ -117,28 +112,12 @@
     margin-top: 10px;
   }
 
-  .stat-box {
-    text-align: center;
-  }
-
-  .stat-num {
-    font-size: 38px;
-    font-weight: 900;
-    color: var(--gold);
-    display: block;
-  }
-
-  .stat-label {
-    font-size: 13px;
-    color: var(--text-muted);
-  }
+  .stat-box { text-align: center; }
+  .stat-num { font-size: 38px; font-weight: 900; color: var(--gold); display: block; }
+  .stat-label { font-size: 13px; color: var(--text-muted); }
 
   /* ===== PAGE LAYOUT ===== */
-  .page {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 60px 50px;
-  }
+  .page { max-width: 900px; margin: 0 auto; padding: 60px 50px; }
 
   /* ===== CHAPTER HEADERS ===== */
   .chapter-cover {
@@ -150,6 +129,7 @@
     position: relative;
     overflow: hidden;
     page-break-before: always;
+    scroll-margin-top: 40px;
   }
 
   .chapter-cover::before {
@@ -184,24 +164,10 @@
   .week2-badge { background: rgba(0,200,151,0.2); color: var(--green); border: 1px solid var(--green); }
   .week3-badge { background: rgba(255,107,53,0.2); color: var(--orange); border: 1px solid var(--orange); }
   .week4-badge { background: rgba(201,168,76,0.2); color: var(--gold); border: 1px solid var(--gold); }
-  .week5-badge { background: rgba(123,47,190,0.2); color: #B06EFF; border: 1px solid #B06EFF; }
   .bonus-badge { background: rgba(15,52,96,0.5); color: #60A0FF; border: 1px solid #60A0FF; }
 
-  .chapter-title {
-    font-size: 38px;
-    font-weight: 900;
-    color: #fff;
-    margin-bottom: 12px;
-    line-height: 1.3;
-  }
-
-  .chapter-goal {
-    font-size: 16px;
-    color: var(--text-muted);
-    border-right: 3px solid var(--gold);
-    padding-right: 15px;
-    margin-top: 20px;
-  }
+  .chapter-title { font-size: 38px; font-weight: 900; color: #fff; margin-bottom: 12px; line-height: 1.3; }
+  .chapter-goal { font-size: 16px; color: var(--text-muted); border-right: 3px solid var(--gold); padding-right: 15px; margin-top: 20px; }
 
   /* ===== DAY SECTIONS ===== */
   .day-section {
@@ -211,513 +177,114 @@
     border-radius: 16px;
     border: 1px solid rgba(255,255,255,0.07);
     position: relative;
+    scroll-margin-top: 40px;
   }
 
-  .day-header {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 20px;
-  }
+  .day-header { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; }
+  .day-badge { background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--dark); padding: 6px 18px; border-radius: 50px; font-size: 13px; font-weight: 900; white-space: nowrap; }
+  .day-title { font-size: 22px; font-weight: 800; color: #fff; }
+  .day-content p { margin-bottom: 14px; color: #C8C8D8; font-size: 15.5px; }
 
-  .day-badge {
-    background: linear-gradient(135deg, var(--gold), var(--gold-light));
-    color: var(--dark);
-    padding: 6px 18px;
-    border-radius: 50px;
-    font-size: 13px;
-    font-weight: 900;
-    white-space: nowrap;
-  }
-
-  .day-title {
-    font-size: 22px;
-    font-weight: 800;
-    color: #fff;
-  }
-
-  .day-content p {
-    margin-bottom: 14px;
-    color: #C8C8D8;
-    font-size: 15.5px;
-  }
-
-  /* ===== TASK BOX ===== */
-  .task-box {
-    background: linear-gradient(135deg, rgba(0,200,151,0.08), rgba(0,200,151,0.04));
-    border: 1px solid rgba(0,200,151,0.3);
-    border-radius: 12px;
-    padding: 20px 25px;
-    margin: 20px 0;
-  }
-
-  .task-label {
-    color: var(--green);
-    font-weight: 800;
-    font-size: 14px;
-    letter-spacing: 1px;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
+  /* ===== BOXES ===== */
+  .task-box { background: linear-gradient(135deg, rgba(0,200,151,0.08), rgba(0,200,151,0.04)); border: 1px solid rgba(0,200,151,0.3); border-radius: 12px; padding: 20px 25px; margin: 20px 0; }
+  .task-label { color: var(--green); font-weight: 800; font-size: 14px; letter-spacing: 1px; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
   .task-box p { color: #B0D8C8; font-size: 15px; margin-bottom: 8px; }
 
-  /* ===== THEORY BOX ===== */
-  .theory-box {
-    background: linear-gradient(135deg, rgba(201,168,76,0.08), rgba(201,168,76,0.04));
-    border: 1px solid rgba(201,168,76,0.25);
-    border-radius: 12px;
-    padding: 20px 25px;
-    margin: 20px 0;
-  }
-
+  .theory-box { background: linear-gradient(135deg, rgba(201,168,76,0.08), rgba(201,168,76,0.04)); border: 1px solid rgba(201,168,76,0.25); border-radius: 12px; padding: 20px 25px; margin: 20px 0; }
   .theory-box p { color: #D8C890; font-size: 15px; margin-bottom: 8px; }
 
-  /* ===== WARNING BOX ===== */
-  .warning-box {
-    background: linear-gradient(135deg, rgba(233,69,96,0.08), rgba(233,69,96,0.04));
-    border: 1px solid rgba(233,69,96,0.3);
-    border-radius: 12px;
-    padding: 20px 25px;
-    margin: 20px 0;
-  }
-
-  .warning-label {
-    color: var(--accent);
-    font-weight: 800;
-    font-size: 14px;
-    margin-bottom: 10px;
-  }
-
+  .warning-box { background: linear-gradient(135deg, rgba(233,69,96,0.08), rgba(233,69,96,0.04)); border: 1px solid rgba(233,69,96,0.3); border-radius: 12px; padding: 20px 25px; margin: 20px 0; }
+  .warning-label { color: var(--accent); font-weight: 800; font-size: 14px; margin-bottom: 10px; }
   .warning-box p { color: #D8A0A8; font-size: 15px; margin-bottom: 8px; }
 
-  /* ===== INFO BOX ===== */
-  .info-box {
-    background: linear-gradient(135deg, rgba(15,52,96,0.4), rgba(15,52,96,0.2));
-    border: 1px solid rgba(96,160,255,0.25);
-    border-radius: 12px;
-    padding: 20px 25px;
-    margin: 20px 0;
-  }
-
+  .info-box { background: linear-gradient(135deg, rgba(15,52,96,0.4), rgba(15,52,96,0.2)); border: 1px solid rgba(96,160,255,0.25); border-radius: 12px; padding: 20px 25px; margin: 20px 0; }
   .info-box p { color: #A0C0E8; font-size: 15px; margin-bottom: 8px; }
 
-  /* ===== SECRET BOX ===== */
-  .secret-box {
-    background: linear-gradient(135deg, rgba(123,47,190,0.12), rgba(123,47,190,0.06));
-    border: 1px solid rgba(176,110,255,0.3);
-    border-radius: 12px;
-    padding: 20px 25px;
-    margin: 20px 0;
-  }
-
-  .secret-label {
-    color: #B06EFF;
-    font-weight: 800;
-    font-size: 14px;
-    margin-bottom: 10px;
-  }
-
+  .secret-box { background: linear-gradient(135deg, rgba(123,47,190,0.12), rgba(123,47,190,0.06)); border: 1px solid rgba(176,110,255,0.3); border-radius: 12px; padding: 20px 25px; margin: 20px 0; }
+  .secret-label { color: #B06EFF; font-weight: 800; font-size: 14px; margin-bottom: 10px; }
   .secret-box p { color: #C0A0E8; font-size: 15px; margin-bottom: 8px; }
 
-  /* ===== NUMBERED LIST ===== */
-  .num-list {
-    list-style: none;
-    padding: 0;
-    margin: 15px 0;
-  }
+  /* ===== LISTS ===== */
+  .num-list { list-style: none; padding: 0; margin: 15px 0; }
+  .num-list li { display: flex; gap: 15px; margin-bottom: 14px; align-items: flex-start; color: #C0C0D0; font-size: 15px; }
+  .num-list li .num { background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--dark); width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 13px; flex-shrink: 0; margin-top: 2px; }
 
-  .num-list li {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 14px;
-    align-items: flex-start;
-    color: #C0C0D0;
-    font-size: 15px;
-  }
+  .bullet-list { list-style: none; padding: 0; margin: 12px 0; }
+  .bullet-list li { padding-right: 20px; position: relative; margin-bottom: 10px; color: #C0C0D0; font-size: 15px; }
+  .bullet-list li::before { content: '◆'; position: absolute; right: 0; color: var(--gold); font-size: 10px; top: 5px; }
 
-  .num-list li .num {
-    background: linear-gradient(135deg, var(--gold), var(--gold-light));
-    color: var(--dark);
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 900;
-    font-size: 13px;
-    flex-shrink: 0;
-    margin-top: 2px;
-  }
-
-  /* ===== BULLET LIST ===== */
-  .bullet-list {
-    list-style: none;
-    padding: 0;
-    margin: 12px 0;
-  }
-
-  .bullet-list li {
-    padding-right: 20px;
-    position: relative;
-    margin-bottom: 10px;
-    color: #C0C0D0;
-    font-size: 15px;
-  }
-
-  .bullet-list li::before {
-    content: '◆';
-    position: absolute;
-    right: 0;
-    color: var(--gold);
-    font-size: 10px;
-    top: 5px;
-  }
-
-  /* ===== TABLE ===== */
-  .data-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-    font-size: 14px;
-  }
-
-  .data-table th {
-    background: linear-gradient(135deg, var(--gold), var(--gold-light));
-    color: var(--dark);
-    padding: 12px 16px;
-    font-weight: 800;
-    text-align: right;
-  }
-
-  .data-table td {
-    padding: 11px 16px;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-    color: #C0C0D0;
-    text-align: right;
-  }
-
-  .data-table tr:nth-child(even) td {
-    background: rgba(255,255,255,0.03);
-  }
-
-  .data-table tr:hover td {
-    background: rgba(201,168,76,0.05);
-  }
+  /* ===== TABLE WRAPPER (MOBILE FIX) ===== */
+  .table-wrapper { width: 100%; overflow-x: auto; margin: 20px 0; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); }
+  .data-table { width: 100%; border-collapse: collapse; margin: 0; font-size: 14px; border: none; min-width: 500px; }
+  .data-table th { background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--dark); padding: 12px 16px; font-weight: 800; text-align: right; }
+  .data-table td { padding: 11px 16px; border-bottom: 1px solid rgba(255,255,255,0.06); color: #C0C0D0; text-align: right; }
+  .data-table tr:nth-child(even) td { background: rgba(255,255,255,0.03); }
+  .data-table tr:hover td { background: rgba(201,168,76,0.05); }
 
   /* ===== PROMPT BOX ===== */
-  .prompt-box {
-    background: #0A0A1A;
-    border: 1px solid rgba(201,168,76,0.3);
-    border-radius: 12px;
-    padding: 25px 30px;
-    margin: 20px 0;
-    font-family: 'Cairo', monospace;
-    font-size: 14.5px;
-    color: #D0D8C0;
-    line-height: 2;
-    position: relative;
-  }
-
-  .prompt-header {
-    font-size: 12px;
-    color: var(--gold);
-    font-weight: 700;
-    letter-spacing: 1px;
-    margin-bottom: 15px;
-    border-bottom: 1px solid rgba(201,168,76,0.15);
-    padding-bottom: 10px;
-  }
-
+  .prompt-box { background: #0A0A1A; border: 1px solid rgba(201,168,76,0.3); border-radius: 12px; padding: 25px 30px; margin: 20px 0; font-family: 'Cairo', monospace; font-size: 14.5px; color: #D0D8C0; line-height: 2; position: relative; }
+  .prompt-header { font-size: 12px; color: var(--gold); font-weight: 700; letter-spacing: 1px; margin-bottom: 15px; border-bottom: 1px solid rgba(201,168,76,0.15); padding-bottom: 10px; }
   .prompt-box strong { color: var(--gold-light); }
   .prompt-box em { color: var(--green); font-style: normal; }
 
-  /* ===== SECTION TITLE ===== */
-  h2 {
-    font-size: 28px;
-    font-weight: 900;
-    color: #fff;
-    margin: 40px 0 20px;
-    position: relative;
-    padding-right: 20px;
-  }
+  /* ===== IMAGES ===== */
+  .book-image { width: 100%; max-width: 700px; border-radius: 12px; border: 1px solid rgba(201,168,76,0.3); margin: 25px auto; display: block; box-shadow: 0 5px 15px rgba(0,0,0,0.4); }
+  .image-caption { text-align: center; color: var(--text-muted); font-size: 13.5px; margin-top: 10px; }
 
-  h2::before {
-    content: '';
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 5px;
-    height: 100%;
-    background: linear-gradient(180deg, var(--gold), var(--accent));
-    border-radius: 3px;
-  }
-
-  h3 {
-    font-size: 20px;
-    font-weight: 800;
-    color: var(--gold-light);
-    margin: 25px 0 12px;
-  }
+  h2 { font-size: 28px; font-weight: 900; color: #fff; margin: 40px 0 20px; position: relative; padding-right: 20px; scroll-margin-top: 40px;}
+  h2::before { content: ''; position: absolute; right: 0; top: 50%; transform: translateY(-50%); width: 5px; height: 100%; background: linear-gradient(180deg, var(--gold), var(--accent)); border-radius: 3px; }
+  h3 { font-size: 20px; font-weight: 800; color: var(--gold-light); margin: 25px 0 12px; }
 
   /* ===== MANIFESTO PAGE ===== */
-  .manifesto {
-    background: linear-gradient(135deg, var(--dark2), #0A0A1A);
-    border-radius: 20px;
-    padding: 60px 50px;
-    margin: 40px 0;
-    border: 1px solid rgba(233,69,96,0.2);
-    text-align: center;
-    page-break-before: always;
-  }
-
-  .manifesto-title {
-    font-size: 40px;
-    font-weight: 900;
-    color: var(--accent);
-    margin-bottom: 25px;
-  }
-
-  .manifesto p {
-    font-size: 18px;
-    color: #C0C0D0;
-    max-width: 700px;
-    margin: 0 auto 18px;
-    line-height: 2;
-  }
-
-  .big-quote {
-    font-size: 24px;
-    font-weight: 700;
-    color: var(--gold);
-    border: 2px solid rgba(201,168,76,0.3);
-    border-radius: 12px;
-    padding: 25px 35px;
-    margin: 30px 0;
-    background: rgba(201,168,76,0.05);
-  }
+  .manifesto { background: linear-gradient(135deg, var(--dark2), #0A0A1A); border-radius: 20px; padding: 60px 50px; margin: 40px 0; border: 1px solid rgba(233,69,96,0.2); text-align: center; page-break-before: always; scroll-margin-top: 40px; }
+  .manifesto-title { font-size: 40px; font-weight: 900; color: var(--accent); margin-bottom: 25px; }
+  .manifesto p { font-size: 18px; color: #C0C0D0; max-width: 700px; margin: 0 auto 18px; line-height: 2; }
+  .big-quote { font-size: 24px; font-weight: 700; color: var(--gold); border: 2px solid rgba(201,168,76,0.3); border-radius: 12px; padding: 25px 35px; margin: 30px 0; background: rgba(201,168,76,0.05); }
 
   /* ===== APPENDIX ===== */
-  .appendix-cover {
-    background: linear-gradient(135deg, #0A0F1A, #0F1A2E);
-    border-radius: 20px;
-    padding: 50px;
-    margin: 60px 0 40px;
-    border: 2px solid rgba(201,168,76,0.25);
-    text-align: center;
-    page-break-before: always;
-  }
+  .appendix-cover { background: linear-gradient(135deg, #0A0F1A, #0F1A2E); border-radius: 20px; padding: 50px; margin: 60px 0 40px; border: 2px solid rgba(201,168,76,0.25); text-align: center; page-break-before: always; scroll-margin-top: 40px; }
+  .appendix-num { font-size: 70px; font-weight: 900; color: rgba(201,168,76,0.15); margin-bottom: 10px; }
+  .appendix-title { font-size: 32px; font-weight: 900; color: var(--gold); margin-bottom: 12px; }
+  .appendix-subtitle { font-size: 16px; color: var(--text-muted); }
 
-  .appendix-num {
-    font-size: 70px;
-    font-weight: 900;
-    color: rgba(201,168,76,0.15);
-    margin-bottom: 10px;
-  }
-
-  .appendix-title {
-    font-size: 32px;
-    font-weight: 900;
-    color: var(--gold);
-    margin-bottom: 12px;
-  }
-
-  .appendix-subtitle {
-    font-size: 16px;
-    color: var(--text-muted);
-  }
-
-  /* ===== RESULT BOX ===== */
-  .result-box {
-    background: linear-gradient(135deg, rgba(0,200,151,0.12), rgba(0,200,151,0.06));
-    border: 2px solid rgba(0,200,151,0.4);
-    border-radius: 16px;
-    padding: 25px 30px;
-    margin: 25px 0;
-    text-align: center;
-  }
-
-  .result-title {
-    font-size: 18px;
-    font-weight: 900;
-    color: var(--green);
-    margin-bottom: 10px;
-  }
-
+  .result-box { background: linear-gradient(135deg, rgba(0,200,151,0.12), rgba(0,200,151,0.06)); border: 2px solid rgba(0,200,151,0.4); border-radius: 16px; padding: 25px 30px; margin: 25px 0; text-align: center; }
+  .result-title { font-size: 18px; font-weight: 900; color: var(--green); margin-bottom: 10px; }
   .result-box p { color: #90D8B8; font-size: 16px; }
 
   /* ===== TOC ===== */
-  .toc {
-    background: linear-gradient(135deg, var(--dark2), var(--dark3));
-    border-radius: 20px;
-    padding: 50px;
-    margin: 40px 0;
-    border: 1px solid rgba(255,255,255,0.08);
-    page-break-before: always;
-  }
+  .toc { background: linear-gradient(135deg, var(--dark2), var(--dark3)); border-radius: 20px; padding: 50px; margin: 40px 0; border: 1px solid rgba(255,255,255,0.08); page-break-before: always; }
+  .toc-title { font-size: 30px; font-weight: 900; color: var(--gold); text-align: center; margin-bottom: 40px; border-bottom: 2px solid rgba(201,168,76,0.2); padding-bottom: 20px; }
+  .toc-section { margin-bottom: 25px; }
+  .toc-week { font-size: 13px; font-weight: 700; color: var(--text-muted); letter-spacing: 1px; margin-bottom: 10px; }
+  .toc-link { text-decoration: none; color: inherit; display: block; transition: all 0.2s; }
+  .toc-link:hover { opacity: 0.8; }
+  .toc-item { display: flex; justify-content: space-between; align-items: center; padding: 10px 15px; border-radius: 8px; margin-bottom: 5px; border-bottom: 1px solid rgba(255,255,255,0.04); }
+  .toc-item:hover { background: rgba(255,255,255,0.05); }
+  .toc-item-title { font-size: 15px; color: #D0D0E0; font-weight: 600; }
+  .toc-dot { flex: 1; border-bottom: 1px dotted rgba(255,255,255,0.15); margin: 0 12px; }
 
-  .toc-title {
-    font-size: 30px;
-    font-weight: 900;
-    color: var(--gold);
-    text-align: center;
-    margin-bottom: 40px;
-    border-bottom: 2px solid rgba(201,168,76,0.2);
-    padding-bottom: 20px;
-  }
-
-  .toc-section {
-    margin-bottom: 25px;
-  }
-
-  .toc-week {
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--text-muted);
-    letter-spacing: 1px;
-    margin-bottom: 10px;
-  }
-
-  .toc-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 15px;
-    border-radius: 8px;
-    margin-bottom: 5px;
-    border-bottom: 1px solid rgba(255,255,255,0.04);
-  }
-
-  .toc-item:hover { background: rgba(255,255,255,0.03); }
-
-  .toc-item-title {
-    font-size: 15px;
-    color: #D0D0E0;
-    font-weight: 600;
-  }
-
-  .toc-item-sub {
-    font-size: 12px;
-    color: var(--text-muted);
-    margin-top: 3px;
-  }
-
-  .toc-dot {
-    flex: 1;
-    border-bottom: 1px dotted rgba(255,255,255,0.15);
-    margin: 0 12px;
-  }
-
-  /* ===== FORMULA BOX ===== */
-  .formula-box {
-    background: linear-gradient(135deg, #0F0F20, #0A0A18);
-    border: 1px solid rgba(176,110,255,0.3);
-    border-radius: 12px;
-    padding: 20px 25px;
-    margin: 15px 0;
-    font-size: 15px;
-    color: #C8B8FF;
-    text-align: center;
-    font-weight: 600;
-  }
+  .formula-box { background: linear-gradient(135deg, #0F0F20, #0A0A18); border: 1px solid rgba(176,110,255,0.3); border-radius: 12px; padding: 20px 25px; margin: 15px 0; font-size: 15px; color: #C8B8FF; text-align: center; font-weight: 600; }
 
   /* ===== ROADMAP ===== */
-  .roadmap-item {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 25px;
-    align-items: flex-start;
-  }
-
-  .roadmap-icon {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-    flex-shrink: 0;
-    font-weight: 900;
-    color: var(--dark);
-  }
-
+  .roadmap-item { display: flex; gap: 20px; margin-bottom: 25px; align-items: flex-start; }
+  .roadmap-icon { width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; font-weight: 900; color: var(--dark); }
   .rm-gold { background: linear-gradient(135deg, var(--gold), var(--gold-light)); }
   .rm-green { background: linear-gradient(135deg, var(--green), #00A070); color: #fff; }
   .rm-purple { background: linear-gradient(135deg, #7B2FBE, #B06EFF); color: #fff; }
-
   .roadmap-content h3 { margin-top: 5px; font-size: 18px; }
   .roadmap-content p { color: #B0B0C0; font-size: 14.5px; margin-top: 5px; }
 
   /* ===== FINAL PAGE ===== */
-  .final-page {
-    min-height: 60vh;
-    background: linear-gradient(135deg, #0D0D0D, #1A1A2E, #0F3460);
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 80px 50px;
-    margin: 60px 0 0;
-    page-break-before: always;
-  }
-
-  .final-title {
-    font-size: 50px;
-    font-weight: 900;
-    background: linear-gradient(135deg, var(--gold), var(--gold-light), #fff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 20px;
-  }
-
-  .final-subtitle {
-    font-size: 20px;
-    color: var(--text-muted);
-    max-width: 600px;
-    margin: 0 auto 40px;
-  }
+  .final-page { min-height: 60vh; background: linear-gradient(135deg, #0D0D0D, #1A1A2E, #0F3460); border-radius: 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 80px 50px; margin: 60px 0 0; page-break-before: always; }
+  .final-title { font-size: 50px; font-weight: 900; background: linear-gradient(135deg, var(--gold), var(--gold-light), #fff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 20px; }
+  .final-subtitle { font-size: 20px; color: var(--text-muted); max-width: 600px; margin: 0 auto 40px; }
 
   /* ===== CONTRACT ===== */
-  .contract-box {
-    background: #0A0A18;
-    border: 2px solid rgba(201,168,76,0.3);
-    border-radius: 16px;
-    padding: 40px;
-    margin: 25px 0;
-    font-size: 14px;
-    line-height: 2.2;
-    color: #C8C8D8;
-  }
+  .contract-box { background: #0A0A18; border: 2px solid rgba(201,168,76,0.3); border-radius: 16px; padding: 40px; margin: 25px 0; font-size: 14px; line-height: 2.2; color: #C8C8D8; }
+  .contract-box h3 { text-align: center; font-size: 22px; color: var(--gold); margin-bottom: 25px; }
+  .contract-field { border-bottom: 1px solid rgba(255,255,255,0.2); padding: 8px 5px; margin: 10px 0; color: #909090; font-size: 13px; }
 
-  .contract-box h3 {
-    text-align: center;
-    font-size: 22px;
-    color: var(--gold);
-    margin-bottom: 25px;
-  }
-
-  .contract-field {
-    border-bottom: 1px solid rgba(255,255,255,0.2);
-    padding: 8px 5px;
-    margin: 10px 0;
-    color: #909090;
-    font-size: 13px;
-  }
-
-  .emoji { font-style: normal; }
-
-.book-image { width: 100%; max-width: 700px; border-radius: 12px; border: 1px solid rgba(201,168,76,0.3); margin: 25px auto; display: block; box-shadow: 0 5px 15px rgba(0,0,0,0.4); }
-.image-caption { text-align: center; color: var(--text-muted); font-size: 13.5px; margin-top: 10px; }
-  
- /* ===== PRINT CSS (CRITICAL FOR PDF EXPORT) ===== */
+  /* ===== PRINT CSS (CRITICAL FOR PDF EXPORT) ===== */
   @media print {
     body, .page { background: #ffffff !important; color: #000000 !important; max-width: 100% !important; padding: 0 !important; }
     .cover, .chapter-cover, .manifesto, .appendix-cover, .final-page, .toc {
@@ -739,216 +306,176 @@
       box-shadow: none !important;
       page-break-inside: avoid;
     }
-    h2, h3, p, span, div, td, th, li, strong, em, .day-title, .task-label, .warning-label, .secret-label { 
+    h2, h3, p, span, div, td, th, li, strong, em, .day-title, .task-label, .warning-label, .secret-label, .toc-item-title { 
       color: #000000 !important; 
       text-shadow: none !important;
     }
     .cover::before, .chapter-cover::before { display: none !important; }
-    .data-table th, .data-table td { border: 1px solid #999 !important; }
+    .data-table th, .data-table td { border: 1px solid #999 !important; background: transparent !important; color: #000 !important;}
     a { text-decoration: none !important; color: #000 !important; }
   }
 </style>
 </head>
 <body>
 
-<!-- ===== COVER ===== -->
 <div class="cover">
   <div class="cover-badge">📖 الدليل التشغيلي الكامل</div>
-  <div class="cover-title">مصنع الإعلانات<br>بالذكاء الاصطناعي</div>
+  <div class="cover-title">كيمياء الإعلانات<br>بالذكاء الاصطناعي</div>
   <div class="cover-divider"></div>
   <div class="cover-subtitle">معسكر الـ 30 يوم: من الصفر لنخبة الـ 1%<br>ابنِ وكالتك الإعلانية وادخل فلوس حقيقية</div>
   <div class="cover-desc">مش كتاب نظري. ده دستور تشغيلي بيضغط خبرة سنتين في 30 يوم. كل يوم ليه مهمة. كل مهمة بتوديك خطوة أقرب للمال الحقيقي.</div>
   <div class="cover-stats">
     <div class="stat-box"><span class="stat-num">30</span><span class="stat-label">يوم تدريبي</span></div>
     <div class="stat-box"><span class="stat-num">10</span><span class="stat-label">ملاحق جاهزة</span></div>
-    <div class="stat-box"><span class="stat-num">5</span><span class="stat-label">فصول متخصصة</span></div>
+    <div class="stat-box"><span class="stat-num">9</span><span class="stat-label">فصول متخصصة</span></div>
     <div class="stat-box"><span class="stat-num">1%</span><span class="stat-label">مستوى الاحتراف</span></div>
   </div>
 </div>
 
 <div class="page">
 
-<!-- ===== MANIFESTO ===== -->
-<div class="manifesto">
+<div id="manifesto" class="manifesto">
   <div class="manifesto-title">🛑 المانيفستو: الكذبة الكبرى</div>
   <p>لو فتحت الكتاب ده عشان "تضغط على زر" ويعملك ذكاء اصطناعي فيديو سينمائي جميل.. أغلقه فوراً.</p>
   <p>السوق دلوقتي بيتخنق بناس بتعمل فيديوهات مبهرة بصرياً، وبعدين بتعيط في الزاوية وبتقول: <strong>"ليه محدش بيدفعلي؟!"</strong></p>
   <div class="big-quote">الشركات مش بتدفع دولار واحد مقابل "الفن". الشركات بتدفع آلاف الدولارات مقابل الفيديوهات اللي بتبيع وبتجيب عملاء.</div>
   <p>علشان تبقى من أفضل 1% في العالم في المجال ده، لازم تفهم إنك مش "مشغّل برامج". إنت بتجسّد 5 عقول في نفس الوقت:</p>
+  
+  <ul class="num-list" style="max-width: 600px; margin: 20px auto; text-align: right;">
+    <li><span class="num">1</span><span><strong>مسوّق الاستجابة المباشرة:</strong> بيفهم سيكولوجية المشتري وألمه الأعمق.</span></li>
+    <li><span class="num">2</span><span><strong>كاتب الإعلانات (Copywriter):</strong> بيكتب خطاطيف بتخطف العين في 3 ثواني.</span></li>
+    <li><span class="num">3</span><span><strong>الاستراتيجي:</strong> بيبني زوايا الإعلان وبيقرأ لغة الأرقام والداتا.</span></li>
+    <li><span class="num">4</span><span><strong>مخرج الـ AI:</strong> بيحوّل الكلمات لمشاهد بصرية مترابطة.</span></li>
+    <li><span class="num">5</span><span><strong>مونتير الأداء:</strong> بيمنتج الإعلان بإيقاع يمنع المشاهد من التمرير.</span></li>
+  </ul>
+
+  <div class="warning-box" style="text-align: right;">
+    <div class="warning-label">⚠️ قوانين المعسكر الثلاثة</div>
+    <p><strong>1. Monk Mode:</strong> خصص 3 ساعات يومياً للتطبيق الفعلي.</p>
+    <p><strong>2. AI Leverage:</strong> هتبرمج AI يكون مساعدك، ودورك "فلترة" مش ابتكار من الصفر.</p>
+    <p><strong>3. Batching:</strong> ممنوع تعمل إعلان واحد للآخر. بنكتب 20 سكربت مع بعض، ونولّد 100 مشهد مع بعض.</p>
+  </div>
 </div>
 
-<ul class="num-list">
-  <li><span class="num">1</span><span><strong>مسوّق الاستجابة المباشرة:</strong> بيفهم سيكولوجية المشتري وألمه الأعمق.</span></li>
-  <li><span class="num">2</span><span><strong>كاتب الإعلانات (Copywriter):</strong> بيكتب خطاطيف (Hooks) بتخطف العين في 3 ثواني.</span></li>
-  <li><span class="num">3</span><span><strong>الاستراتيجي:</strong> بيبني زوايا الإعلان وبيقرأ لغة الأرقام والداتا.</span></li>
-  <li><span class="num">4</span><span><strong>مخرج الـ AI:</strong> بيحوّل الكلمات لمشاهد بصرية مترابطة ومقنعة.</span></li>
-  <li><span class="num">5</span><span><strong>مونتير الأداء:</strong> بيمنتج الإعلان بإيقاع يمنع المشاهد من التمرير.</span></li>
-</ul>
-
-<div class="warning-box">
-  <div class="warning-label">⚠️ قوانين المعسكر الثلاثة</div>
-  <p><strong>1. Monk Mode (العمل العميق):</strong> الكتاب ده مش للقراءة للتسلية. خصص 3 ساعات يومياً للتطبيق الفعلي.</p>
-  <p><strong>2. AI Leverage (الاستنساخ المؤتمت):</strong> مش هتكتب 100 فكرة بإيدك وتضيّع أسبوع. هتبرمج ChatGPT/Claude يكون مساعدك، ودورك يبقى "فلترة" مش ابتكار من الصفر.</p>
-  <p><strong>3. Batching (خط التجميع):</strong> ممنوع تعمل إعلان واحد من الأول للآخر. بنكتب 20 سكربت مع بعض، بنولّد 100 مشهد مع بعض، وبنمنتج الكل مع بعض. السرعة هي سر الربح.</p>
-</div>
-
-<!-- ===== TABLE OF CONTENTS ===== -->
 <div class="toc">
-  <div class="toc-title">📋 محتويات الكتاب</div>
+  <div class="toc-title">📋 محتويات الكتاب (اضغط للذهاب)</div>
+
+  <div class="toc-section">
+    <div class="toc-week">المقدمة</div>
+    <a href="#manifesto" class="toc-link"><div class="toc-item"><span class="toc-item-title">المانيفستو وقوانين المعسكر</span><span class="toc-dot"></span></div></a>
+  </div>
 
   <div class="toc-section">
     <div class="toc-week">الأسبوع الأول — العقل والكلمات</div>
-    <div class="toc-item"><span class="toc-item-title">اليوم 1-2: تشريح الإعلانات الناجحة</span><span class="toc-dot"></span><span style="color:var(--text-muted);font-size:13px">أساسيات</span></div>
-    <div class="toc-item"><span class="toc-item-title">اليوم 3-4: مصنع الخطاطيف المؤتمت</span><span class="toc-dot"></span><span style="color:var(--text-muted);font-size:13px">أساسيات</span></div>
-    <div class="toc-item"><span class="toc-item-title">اليوم 5-6: السكربت والمشاهد البصرية</span><span class="toc-dot"></span><span style="color:var(--text-muted);font-size:13px">أساسيات</span></div>
-    <div class="toc-item"><span class="toc-item-title">اليوم 7: بناء الترسانة (Swipe File)</span><span class="toc-dot"></span><span style="color:var(--text-muted);font-size:13px">أساسيات</span></div>
+    <a href="#day1" class="toc-link"><div class="toc-item"><span class="toc-item-title">اليوم 1-2: تشريح الإعلانات الناجحة</span><span class="toc-dot"></span></div></a>
+    <a href="#day3" class="toc-link"><div class="toc-item"><span class="toc-item-title">اليوم 3-4: مصنع الخطاطيف المؤتمت</span><span class="toc-dot"></span></div></a>
+    <a href="#day5" class="toc-link"><div class="toc-item"><span class="toc-item-title">اليوم 5-6: السكربت والمشاهد البصرية</span><span class="toc-dot"></span></div></a>
+    <a href="#day7" class="toc-link"><div class="toc-item"><span class="toc-item-title">اليوم 7: بناء الترسانة (Swipe File)</span><span class="toc-dot"></span></div></a>
   </div>
 
   <div class="toc-section">
     <div class="toc-week">الأسبوع الثاني — المصنع (الإنتاج بالـ AI)</div>
-    <div class="toc-item"><span class="toc-item-title">اليوم 8-9: هندسة الأوامر للمخرجين</span><span class="toc-dot"></span><span style="color:var(--text-muted);font-size:13px">إنتاج</span></div>
-    <div class="toc-item"><span class="toc-item-title">اليوم 10-11: ثبات المنتج والاستمرارية</span><span class="toc-dot"></span><span style="color:var(--text-muted);font-size:13px">إنتاج</span></div>
-    <div class="toc-item"><span class="toc-item-title">اليوم 12-13: الدمج البشري والهجين UGC</span><span class="toc-dot"></span><span style="color:var(--text-muted);font-size:13px">إنتاج</span></div>
-    <div class="toc-item"><span class="toc-item-title">اليوم 14: يوم الإنتاج الشامل</span><span class="toc-dot"></span><span style="color:var(--text-muted);font-size:13px">إنتاج</span></div>
+    <a href="#day8" class="toc-link"><div class="toc-item"><span class="toc-item-title">اليوم 8-9: هندسة الأوامر للمخرجين</span><span class="toc-dot"></span></div></a>
+    <a href="#day10" class="toc-link"><div class="toc-item"><span class="toc-item-title">اليوم 10-11: ثبات المنتج والاستمرارية</span><span class="toc-dot"></span></div></a>
+    <a href="#day12" class="toc-link"><div class="toc-item"><span class="toc-item-title">اليوم 12-13: الدمج البشري والهجين UGC</span><span class="toc-dot"></span></div></a>
+    <a href="#day14" class="toc-link"><div class="toc-item"><span class="toc-item-title">اليوم 14: يوم الإنتاج الشامل</span><span class="toc-dot"></span></div></a>
   </div>
 
   <div class="toc-section">
     <div class="toc-week">الأسبوع الثالث — التغليف والمونتاج</div>
-    <div class="toc-item"><span class="toc-item-title">اليوم 15-16: مونتاج الاحتفاظ</span><span class="toc-dot"></span><span style="color:var(--text-muted);font-size:13px">مونتاج</span></div>
-    <div class="toc-item"><span class="toc-item-title">اليوم 17-18: هندسة الصوت والكابتشن</span><span class="toc-dot"></span><span style="color:var(--text-muted);font-size:13px">مونتاج</span></div>
-    <div class="toc-item"><span class="toc-item-title">اليوم 19-20: مصفوفة النسخ المتعددة 🔥</span><span class="toc-dot"></span><span style="color:var(--text-muted);font-size:13px">مونتاج</span></div>
-    <div class="toc-item"><span class="toc-item-title">اليوم 21: لغة الأرقام والداتا</span><span class="toc-dot"></span><span style="color:var(--text-muted);font-size:13px">مونتاج</span></div>
+    <a href="#day15" class="toc-link"><div class="toc-item"><span class="toc-item-title">اليوم 15-16: مونتاج الاحتفاظ</span><span class="toc-dot"></span></div></a>
+    <a href="#day17" class="toc-link"><div class="toc-item"><span class="toc-item-title">اليوم 17-18: هندسة الصوت والكابتشن</span><span class="toc-dot"></span></div></a>
+    <a href="#day19" class="toc-link"><div class="toc-item"><span class="toc-item-title">اليوم 19-20: مصفوفة الـ 80 إعلان 🔥</span><span class="toc-dot"></span></div></a>
+    <a href="#day21" class="toc-link"><div class="toc-item"><span class="toc-item-title">اليوم 21: لغة الأرقام والداتا</span><span class="toc-dot"></span></div></a>
   </div>
 
   <div class="toc-section">
     <div class="toc-week">الأسبوع الرابع — الإمبراطورية وصيد العملاء</div>
-    <div class="toc-item"><span class="toc-item-title">اليوم 22-23: قوة التخصص (Niche)</span><span class="toc-dot"></span><span style="color:var(--text-muted);font-size:13px">بزنس</span></div>
-    <div class="toc-item"><span class="toc-item-title">اليوم 24-25: بورتفوليو النخبة</span><span class="toc-dot"></span><span style="color:var(--text-muted);font-size:13px">بزنس</span></div>
-    <div class="toc-item"><span class="toc-item-title">اليوم 26-27: تسعير الباقات الاحترافية</span><span class="toc-dot"></span><span style="color:var(--text-muted);font-size:13px">بزنس</span></div>
-    <div class="toc-item"><span class="toc-item-title">اليوم 28-29: صيد العملاء بالطُعم</span><span class="toc-dot"></span><span style="color:var(--text-muted);font-size:13px">بزنس</span></div>
-    <div class="toc-item"><span class="toc-item-title">اليوم 30: يوم الإطلاق الرسمي</span><span class="toc-dot"></span><span style="color:var(--text-muted);font-size:13px">بزنس</span></div>
+    <a href="#day22" class="toc-link"><div class="toc-item"><span class="toc-item-title">اليوم 22-23: قوة التخصص (Niche)</span><span class="toc-dot"></span></div></a>
+    <a href="#day24" class="toc-link"><div class="toc-item"><span class="toc-item-title">اليوم 24-25: بورتفوليو النخبة</span><span class="toc-dot"></span></div></a>
+    <a href="#day26" class="toc-link"><div class="toc-item"><span class="toc-item-title">اليوم 26-27: تسعير الباقات الاحترافية</span><span class="toc-dot"></span></div></a>
+    <a href="#day28" class="toc-link"><div class="toc-item"><span class="toc-item-title">اليوم 28-29: صيد العملاء بالطُعم</span><span class="toc-dot"></span></div></a>
+    <a href="#day30" class="toc-link"><div class="toc-item"><span class="toc-item-title">اليوم 30: يوم الإطلاق الرسمي</span><span class="toc-dot"></span></div></a>
   </div>
 
   <div class="toc-section">
-    <div class="toc-week">الفصل الخامس — البيع والإغلاق الاحترافي ✨ جديد</div>
-    <div class="toc-item"><span class="toc-item-title">سيناريو مكالمة البيع الكاملة</span><span class="toc-dot"></span></div>
-    <div class="toc-item"><span class="toc-item-title">الردود على اعتراضات العملاء</span><span class="toc-dot"></span></div>
-  </div>
-
-  <div class="toc-section">
-    <div class="toc-week">الفصل السادس — الحماية القانونية ✨ جديد</div>
-    <div class="toc-item"><span class="toc-item-title">نموذج العقد الاحترافي الجاهز</span><span class="toc-dot"></span></div>
-  </div>
-
-  <div class="toc-section">
-    <div class="toc-week">الفصل السابع — إدارة العملاء ✨ جديد</div>
-    <div class="toc-item"><span class="toc-item-title">Onboarding العميل الجديد</span><span class="toc-dot"></span></div>
-    <div class="toc-item"><span class="toc-item-title">تسليم المشاريع باحترافية</span><span class="toc-dot"></span></div>
-  </div>
-
-  <div class="toc-section">
-    <div class="toc-week">الفصل الثامن والتاسع — البراند والتوسع ✨ جديد</div>
-    <div class="toc-item"><span class="toc-item-title">بناء Personal Brand يجيبلك عملاء</span><span class="toc-dot"></span></div>
-    <div class="toc-item"><span class="toc-item-title">من فريلانسر لوكالة حقيقية</span><span class="toc-dot"></span></div>
+    <div class="toc-week">أقسام البزنس والإدارة</div>
+    <a href="#chap5" class="toc-link"><div class="toc-item"><span class="toc-item-title">الفصل 5: مكالمة البيع والإغلاق</span><span class="toc-dot"></span></div></a>
+    <a href="#chap6" class="toc-link"><div class="toc-item"><span class="toc-item-title">الفصل 6: الحماية القانونية واستلام الأموال</span><span class="toc-dot"></span></div></a>
+    <a href="#chap7" class="toc-link"><div class="toc-item"><span class="toc-item-title">الفصل 7: إدارة العملاء والـ Onboarding</span><span class="toc-dot"></span></div></a>
+    <a href="#chap8" class="toc-link"><div class="toc-item"><span class="toc-item-title">الفصل 8: البراند الشخصي</span><span class="toc-dot"></span></div></a>
+    <a href="#chap9" class="toc-link"><div class="toc-item"><span class="toc-item-title">الفصل 9: التوسع لوكالة والأتمتة</span><span class="toc-dot"></span></div></a>
   </div>
 
   <div class="toc-section">
     <div class="toc-week">الملاحق (10 أدوات غش مشروعة)</div>
-    <div class="toc-item"><span class="toc-item-title">ملحق 1-10: Prompts + عقد + سيناريوهات + خارطة 90 يوم</span><span class="toc-dot"></span></div>
+    <a href="#appendices" class="toc-link"><div class="toc-item"><span class="toc-item-title">الانتقال إلى الملاحق الجاهزة</span><span class="toc-dot"></span></div></a>
   </div>
 </div>
 
-
-<!-- ===== WEEK 1 ===== -->
-<div class="chapter-cover">
+<div id="week1" class="chapter-cover">
   <div class="chapter-number">01</div>
   <div class="chapter-week-badge week1-badge">الأسبوع الأول</div>
   <div class="chapter-title">🧠 العقل<br>مهندس السيكولوجيا والكلمات</div>
   <div class="chapter-goal">الهدف: 80% من نجاح الإعلان بيتحدد قبل ما تفتح أي برنامج ذكاء اصطناعي. هنا بنبني العضلة التسويقية الحقيقية.</div>
 </div>
 
-<div class="day-section">
+<div id="day1" class="day-section">
   <div class="day-header">
     <div class="day-badge">اليوم 1 و 2</div>
     <div class="day-title">🔬 التشريح القاسي — Ad Teardowns</div>
   </div>
   <div class="day-content">
     <p>إنت مش هتتعلم من الكورسات. هتتعلم من الإعلانات اللي بتصرف ملايين الدولارات دلوقتي. كل إعلان بيبيع بكثافة بيعتمد على إطار ABCD.</p>
-
     <div class="theory-box">
       <p><strong>A — Attention (الخطاف):</strong> أول 3 ثواني. صدمة، سؤال، أو حركة مفاجئة بتوقف الإصبع عن التمرير.</p>
       <p><strong>B — Branding (المشكلة/المنتج):</strong> إيه الألم؟ وإزاي ظهر المنتج كبطل الحكاية؟</p>
       <p><strong>C — Connection (الارتباط/الدليل):</strong> إزاي أثبت إن المنتج شغال؟ (قبل/بعد، تقييم عميل، أرقام).</p>
       <p><strong>D — Direction (الدعوة للإجراء):</strong> إيه اللي طلبه منك في الآخر؟ (حمّل التطبيق، اطلب دلوقتي، اشترك).</p>
     </div>
-
     <div class="task-box">
       <div class="task-label">✅ مهمة التنفيذ</div>
       <p>افتح TikTok Creative Center أو Meta Ads Library. ابحث عن 50 إعلان نشط في مجالك المفضل. افتح جدول على Notion واكتب فيه: (الزاوية النفسية — نص الخطاف الأول — نوع اللقطة البصرية). ده مش تحليل، ده تجسس بيخليك تسرق بذكاء.</p>
     </div>
-
-    <div class="info-box">
-      <p><strong>💡 نصيحة ذهبية:</strong> لما تلاقي إعلان شغال ومستمر من 3 أشهر أو أكتر، ده معناه إنه بيجيب نتايج. افرح بيه وحلله بالتفصيل.</p>
-    </div>
   </div>
 </div>
 
-<div class="day-section">
+<div id="day3" class="day-section">
   <div class="day-header">
     <div class="day-badge">اليوم 3 و 4</div>
     <div class="day-title">🏭 مصنع الخطاطيف المؤتمت — The Hook Factory</div>
   </div>
   <div class="day-content">
     <p>الخطاف هو شريان الحياة. لو الخطاف مش قوي، مفيش إعلان. بسيطة. أقوى 5 أنواع خطاطيف في العالم:</p>
-
     <ul class="num-list">
       <li><span class="num">1</span><span><strong>النداء المباشر:</strong> "لو بتعاني من تساقط الشعر، الفيديو ده ليك" — بيعزل الجمهور المثالي فوراً.</span></li>
       <li><span class="num">2</span><span><strong>الخطاف السلبي:</strong> "توقف عن استخدام الشامبو العادي فوراً!" — بيستغل الخوف من الخسارة.</span></li>
-      <li><span class="num">3</span><span><strong>الفضول:</strong> "السر اللي دكاترة الجلدية بيخبوه عنك" — بيفتح فجوة معلوماتية في دماغ المشاهد.</span></li>
-      <li><span class="num">4</span><span><strong>الرغبة والتحول:</strong> "كيف حصلت على بشرة زجاجية في 14 يوم" — بيبيع نتيجة مش منتج.</span></li>
-      <li><span class="num">5</span><span><strong>كسر النمط (Pattern Interrupt):</strong> فعل بصري غريب زي سكب مية على الكاميرا — الدماغ مش قادر يتجاهله.</span></li>
+      <li><span class="num">3</span><span><strong>الفضول:</strong> "السر اللي دكاترة الجلدية بيخبوه عنك" — بيفتح فجوة معلوماتية.</span></li>
+      <li><span class="num">4</span><span><strong>الرغبة:</strong> "كيف حصلت على بشرة زجاجية في 14 يوم" — بيبيع نتيجة مش منتج.</span></li>
+      <li><span class="num">5</span><span><strong>كسر النمط (Pattern Interrupt):</strong> فعل بصري غريب زي سكب مية على الكاميرا.</span></li>
     </ul>
-
     <div class="task-box">
       <div class="task-label">✅ مهمة التنفيذ</div>
-      <p>اختار 3 منتجات حقيقية. استخدم الملحق رقم 1 (الموجود في آخر الكتاب) في ChatGPT لتوليد 150 خطاف احترافي. اختار أحسن 30 واحتفظ بيهم في Notion.</p>
-    </div>
-
-    <div class="secret-box">
-      <div class="secret-label">🔐 سر محترفي الإعلانات</div>
-      <p>المحترف مش بيستنى "الإلهام". عنده 500 خطاف جاهز في Swipe File بيبدأ منها. ده مش غش، ده نظام.</p>
+      <p>اختار 3 منتجات حقيقية. استخدم الملحق رقم 1 في ChatGPT لتوليد 150 خطاف احترافي. اختار أحسن 30 واحتفظ بيهم.</p>
     </div>
   </div>
 </div>
 
-<div class="day-section">
+<div id="day5" class="day-section">
   <div class="day-header">
     <div class="day-badge">اليوم 5 و 6</div>
-    <div class="day-title">📝 السكربت والتقسيم المشهدي — Scripting & Shot-listing</div>
+    <div class="day-title">📝 السكربت والتقسيم المشهدي</div>
   </div>
   <div class="day-content">
-    <p>دلوقتي هنحوّل الخطاطيف لسكربتات من 15 لـ 30 ثانية. الإعلان الناجح بالـ AI بيعتمد على "التفكير البصري". مش بس بتكتب الكلمات، بتكتب الكاميرا!</p>
-
+    <p>دلوقتي هنحوّل الخطاطيف لسكربتات. الإعلان الناجح بالـ AI بيعتمد على "التفكير البصري". مش بس بتكتب الكلمات، بتكتب الكاميرا!</p>
     <div class="warning-box">
       <div class="warning-label">❌ مثال غلط</div>
       <p>"لقطة لشخص يشرب قهوة"</p>
     </div>
-
     <div class="task-box">
       <div class="task-label">✅ مثال صح (لغة المخرجين)</div>
-      <p>"Close-up لكوب قهوة بينسكب منه سكر أبيض بكثافة بحركة بطيئة (slow motion)، إضاءة دافية ذهبية، البخار بيتصاعد ببطء، والخلفية blur حالم."</p>
+      <p>"Close-up لكوب قهوة بينسكب منه سكر أبيض بكثافة بحركة بطيئة (slow motion)، إضاءة دافية ذهبية، البخار بيتصاعد."</p>
     </div>
-
-    <p>إطار السكربت الاحترافي (الـ 5 خطوات):</p>
-
-    <ul class="num-list">
-      <li><span class="num">H</span><span><strong>Hook (0-3 ث):</strong> الخطاف البصري اللي بيوقّف التمرير.</span></li>
-      <li><span class="num">P</span><span><strong>Problem Agitation (3-8 ث):</strong> حرّك الجرح. اجعله يحس بالألم أكتر.</span></li>
-      <li><span class="num">S</span><span><strong>Solution (8-18 ث):</strong> قدّم المنتج كبطل وليس كمنتج.</span></li>
-      <li><span class="num">Pr</span><span><strong>Proof (18-25 ث):</strong> دليل: تقييم، أرقام، قبل/بعد.</span></li>
-      <li><span class="num">C</span><span><strong>CTA (25-30 ث):</strong> طلب واضح ومحدد ومحدود بالوقت.</span></li>
-    </ul>
-
     <div class="task-box">
       <div class="task-label">✅ مهمة التنفيذ</div>
       <p>استخدم الملحق رقم 2 في ChatGPT ليحوّل خطاطيفك لـ 15 "سكربت بصري مزدوج": جدول 3 أعمدة (الثواني — التعليق الصوتي — الوصف البصري للـ AI).</p>
@@ -956,23 +483,20 @@
   </div>
 </div>
 
-<div class="day-section">
+<div id="day7" class="day-section">
   <div class="day-header">
     <div class="day-badge">اليوم 7</div>
     <div class="day-title">🗂️ بناء الترسانة — The Swipe File</div>
   </div>
   <div class="day-content">
     <p>المحترف مش بيبدأ من الصفر مع كل عميل. عنده "مخ إعلاني" محزّن فيه كل حاجة.</p>
-
     <div class="task-box">
       <div class="task-label">✅ مهمة التنفيذ</div>
-      <p>افتح Notion وابني 4 صفحات: (1) خطاطيف مصنّفة حسب النوع، (2) سكربتات جاهزة حسب المجال، (3) Prompts بصرية جاهزة، (4) أمثلة إعلانات ناجحة. ده "عقلك الإعلاني" اللي هيوفّرلك أيام من التفكير مع كل عميل جديد.</p>
+      <p>افتح Notion وابني 4 صفحات: (1) خطاطيف جاهزة، (2) سكربتات، (3) Prompts بصرية جاهزة، (4) أمثلة إعلانات ناجحة. ده بيوفّرلك أيام تفكير مع العميل.</p>
     </div>
   </div>
 </div>
 
-
-<!-- ===== WEEK 2 ===== -->
 <div class="chapter-cover">
   <div class="chapter-number">02</div>
   <div class="chapter-week-badge week2-badge">الأسبوع الثاني</div>
@@ -980,1022 +504,427 @@
   <div class="chapter-goal">الهدف: الانتقال من الورق للشاشة. ترويض الآلة لإنتاج لقطات دقيقة ومقنعة مش "روبوتية".</div>
 </div>
 
-<div class="day-section">
+<div id="day8" class="day-section">
   <div class="day-header">
     <div class="day-badge">اليوم 8 و 9</div>
-    <div class="day-title">🎯 الكيمياء البصرية وهندسة الأوامر — Prompt Engineering</div>
+    <div class="day-title">🎯 الكيمياء البصرية وهندسة الأوامر</div>
   </div>
   <div class="day-content">
-    <p>بطّل تكتب أوامر عشوائية زي "ولد بيلعب بالكرة". علشان تجيب مشاهد سينمائية من Runway Gen-4 أو Veo 3، لازم تتكلم بلغة المخرجين.</p>
-
+    <p>بطّل تكتب أوامر عشوائية. علشان تجيب مشاهد سينمائية من Runway Gen-4 أو Veo، لازم تتكلم بلغة المخرجين.</p>
     <div class="theory-box">
       <p><strong>معادلة المخرج الذهبية:</strong></p>
-      <p>[الموضوع/المنتج] + [البيئة/السياق] + [حركة الكاميرا/نوع اللقطة] + [الإضاءة] + [الأسلوب/المزاج] + [قيود سلبية]</p>
+      <p>[الموضوع/المنتج] + [البيئة/السياق] + [حركة الكاميرا] + [الإضاءة] + [الأسلوب] + [قيود سلبية]</p>
     </div>
-
-    <h3>📸 قاموس المخرج البصري السريع</h3>
-
     <div class="table-wrapper">
-    <table class="data-table">
-      <tr><th>الفئة</th><th>الاسم الإنجليزي</th><th>المعنى والاستخدام</th></tr>
-      <tr><td>حركة الكاميرا</td><td>Push-in / Dolly In</td><td>دخول بطيء للموضوع — يخلق توتر وتركيز</td></tr>
-      <tr><td>حركة الكاميرا</td><td>Fast Pan</td><td>التفاف سريع — ينقل الطاقة</td></tr>
-      <tr><td>حركة الكاميرا</td><td>Orbit / Arc Shot</td><td>دوران حول المنتج — يكشف التفاصيل</td></tr>
-      <tr><td>حركة الكاميرا</td><td>Whip Pan</td><td>انتقال سريع جداً — يضيف ديناميكية</td></tr>
-      <tr><td>نوع اللقطة</td><td>Extreme Close-up</td><td>مقربة جداً — للتفاصيل الصغيرة</td></tr>
-      <tr><td>نوع اللقطة</td><td>Wide Angle Shot</td><td>زاوية واسعة — للبيئة والسياق</td></tr>
-      <tr><td>نوع اللقطة</td><td>Over-the-shoulder</td><td>من فوق الكتف — للتفاعل البشري</td></tr>
-      <tr><td>الإضاءة</td><td>Golden Hour Lighting</td><td>إضاءة دافية ذهبية — للمنتجات الفاخرة</td></tr>
-      <tr><td>الإضاءة</td><td>Cinematic Lighting</td><td>إضاءة سينمائية احترافية</td></tr>
-      <tr><td>الإضاءة</td><td>Neon/Cyberpunk</td><td>إضاءة نيون — للتكنولوجيا والألعاب</td></tr>
-    </table>
-</div>
+      <table class="data-table">
+        <tr><th>الفئة</th><th>المصطلح الإنجليزي</th><th>المعنى والاستخدام</th></tr>
+        <tr><td>حركة كاميرا</td><td>Push-in</td><td>دخول بطيء للموضوع — يخلق توتر وتركيز</td></tr>
+        <tr><td>حركة كاميرا</td><td>Orbit / Arc Shot</td><td>دوران حول المنتج — يكشف التفاصيل</td></tr>
+        <tr><td>نوع اللقطة</td><td>Extreme Close-up</td><td>مقربة جداً — للتفاصيل الصغيرة</td></tr>
+        <tr><td>الإضاءة</td><td>Golden Hour Lighting</td><td>إضاءة دافية ذهبية — للمنتجات الفاخرة</td></tr>
+      </table>
+    </div>
     <div class="task-box">
       <div class="task-label">✅ مهمة التنفيذ</div>
-      <p>استخدم الملحق رقم 3 لتوليد 50 مشهد عشوائي باستخدام المعادلة الذهبية. اختبر استجابة الآلة لأنواع مختلفة من اللقطات. دوّن ملاحظاتك: أي Prompts أدت لنتايج أحسن في مجالك.</p>
+      <p>استخدم الملحق رقم 3 لتوليد 50 مشهد عشوائي باستخدام المعادلة الذهبية. اختبر استجابة الآلة لأنواع اللقطات.</p>
     </div>
   </div>
 </div>
 
-<div class="day-section">
+<div id="day10" class="day-section">
   <div class="day-header">
     <div class="day-badge">اليوم 10 و 11</div>
-    <div class="day-title">🔄 تحدي الاستمرارية وثبات المنتج — Consistency</div>
+    <div class="day-title">🔄 تحدي الاستمرارية وثبات المنتج</div>
   </div>
   <div class="day-content">
-    <p>المشكلة الكبرى اللي بتخسّر العقود: الآلة بتشوّه شكل المنتجات. العميل مش هيدفع لو اتغير شكل زجاجة العطر الخاصة بيه في كل لقطة!</p>
-
+    <p>العميل مش هيدفع لو اتغير شكل زجاجة العطر الخاصة بيه في كل لقطة!</p>
     <div class="warning-box">
-      <div class="warning-label">⚠️ المشاكل الشائعة وحلولها</div>
-      <p><strong>مشكلة:</strong> شكل المنتج بيتغير بين اللقطات.</p>
-      <p><strong>الحل:</strong> استخدم Image-to-Video — حمّل صورة حقيقية للمنتج كـ Reference وخلي AI يحرّك البيئة حواليه.</p>
-      <p><strong>مشكلة:</strong> النصوص والأرقام على المنتج بتتشوه.</p>
-      <p><strong>الحل:</strong> أضف في الـ Prompt: "--no text distortion, keep product label exactly as shown".</p>
-    </div>
-
-    <div class="task-box">
-      <div class="task-label">✅ مهمة التنفيذ</div>
-      <p>خذ صورة منتج حقيقي وحمّلها لـ Runway. استخدم أداة Motion Brush أو أوامر الكاميرا لتحريك البيئة حوالين المنتج (دخان، مية، أضواء بتتغير) مع تثبيت شكل المنتج 100%.</p>
+      <div class="warning-label">⚠️ الحل السحري: Image-to-Video</div>
+      <p>حمّل صورة حقيقية للمنتج كـ Reference وخلي AI يحرّك البيئة حواليه (دخان، مية، أضواء) مع تثبيت شكل المنتج 100%.</p>
     </div>
   </div>
 </div>
 
-<div class="day-section">
+<div id="day12" class="day-section">
   <div class="day-header">
     <div class="day-badge">اليوم 12 و 13</div>
-    <div class="day-title">👥 الدمج البشري والهجين — Hybrid UGC & Avatars</div>
+    <div class="day-title">👥 الدمج البشري والهجين (Hybrid UGC)</div>
   </div>
   <div class="day-content">
-    <p>الناس بتشتري من الناس. دمج الوجوه البشرية مع إبهار الـ AI بيضاعف المبيعات. ده السر اللي بيخلي إعلانات الـ AI تتشاف وكأنها UGC حقيقي.</p>
-
+    <p>الناس بتشتري من الناس. دمج الوجوه البشرية مع إبهار الـ AI بيضاعف المبيعات.</p>
     <ul class="bullet-list">
-      <li>ولّد تعليق صوتي بشري بيحمل مشاعر حقيقية عبر ElevenLabs — اختار نبرة تتناسب مع المنتج (متحمس، موثوق، حنوّن).</li>
-      <li>استخدم HeyGen أو Runway Lip-sync لجعل شخصية AI تتكلم بسكربت الإعلان بشكل طبيعي.</li>
-      <li>دمج اللقطات البشرية (حتى لو مصطنعة) مع لقطات المنتج السينمائية في مونتاج متناسق.</li>
+      <li>ولّد تعليق صوتي بشري بيحمل مشاعر حقيقية عبر ElevenLabs.</li>
+      <li>استخدم HeyGen لعمل شخصية AI تتكلم بسكربت الإعلان بشكل طبيعي (Lip-sync).</li>
     </ul>
-
-    <div class="task-box">
-      <div class="task-label">✅ مهمة التنفيذ</div>
-      <p>اعمل إعلان هجين: 40% لقطات بشرية من Avatar + 60% لقطات منتج سينمائية. لاحظ الفرق في "الإحساس" مقارنة بإعلان AI خالص.</p>
-    </div>
   </div>
 </div>
 
-<div class="day-section">
+<div id="day14" class="day-section">
   <div class="day-header">
     <div class="day-badge">اليوم 14</div>
-    <div class="day-title">⚡ يوم الإنتاج الشامل — Mass Generation Day</div>
+    <div class="day-title">⚡ يوم الإنتاج الشامل</div>
   </div>
   <div class="day-content">
-    <p>اليوم ده مش يوم تعلم. ده يوم تنفيذ خالص.</p>
-
     <div class="task-box">
       <div class="task-label">✅ مهمة التنفيذ</div>
-      <p>قفل تليفونك. اقعد 4-5 ساعات متواصلة. وّلد كل المشاهد الخام (Raw Footage) والأصوات للـ 15 سكربت اللي كتبتهم في الأسبوع الأول. مش لازم يكون كامل، لازم يكون موجود. الكمال عدو الإنهاء.</p>
-    </div>
-
-    <div class="result-box">
-      <div class="result-title">🎉 إنجاز الأسبوع الثاني</div>
-      <p>عندك دلوقتي مكتبة من المشاهد الخام جاهزة للمونتاج. ده نفسه اللي بيعمله استوديوهات كاملة!</p>
+      <p>قفل تليفونك. اقعد 4 ساعات متواصلة. وّلد كل المشاهد الخام (Raw Footage) والأصوات للـ 15 سكربت اللي كتبتهم في الأسبوع الأول. الكمال عدو الإنهاء.</p>
     </div>
   </div>
 </div>
 
-
-<!-- ===== WEEK 3 ===== -->
 <div class="chapter-cover">
   <div class="chapter-number">03</div>
   <div class="chapter-week-badge week3-badge">الأسبوع الثالث</div>
   <div class="chapter-title">✂️ التغليف<br>المونتير الكيميائي ومختبر البيانات</div>
-  <div class="chapter-goal">الهدف: تجميع المشاهد الخام في "كبسولات" سريعة الإيقاع تمنع المشاهد من التمرير، ومضاعفة الإنتاج بذكاء.</div>
+  <div class="chapter-goal">الهدف: تجميع المشاهد الخام في "كبسولات" سريعة الإيقاع تمنع المشاهد من التمرير.</div>
 </div>
 
-<div class="day-section">
+<div id="day15" class="day-section">
   <div class="day-header">
     <div class="day-badge">اليوم 15 و 16</div>
     <div class="day-title">🎞️ مونتاج الاحتفاظ — Retention Editing</div>
   </div>
   <div class="day-content">
-    <p>الملل هو العدو الأول. الخوارزميات بتعاقب الفيديوهات البطيئة وبتكافئ الديناميكية. الهدف إن المشاهد ميعرفش يتمرر.</p>
-
+    <p>الخوارزميات بتعاقب الفيديوهات البطيئة وبتكافئ الديناميكية.</p>
     <div class="theory-box">
-      <p><strong>قاعدة الـ 2 ثانية:</strong> لازم يحصل تغيير بصري (لقطة جديدة، زووم، أو تأثير) كل ثانيتين بالحد الأقصى.</p>
+      <p><strong>قاعدة الـ 2 ثانية:</strong> لازم يحصل تغيير بصري (لقطة، زووم، أو تأثير) كل ثانيتين بالحد الأقصى.</p>
       <p><strong>Hard Cuts:</strong> اقطع كل "فراغات الصوت الميتة" في التعليق الصوتي بلا رحمة. الصمت = تمرير.</p>
-      <p><strong>J-Cut و L-Cut:</strong> خلي الصوت يبدأ قبل اللقطة أو يستمر بعدها — ده بيخلي الانتقالات أكثر سلاسة.</p>
-    </div>
-
-    <div class="task-box">
-      <div class="task-label">✅ مهمة التنفيذ</div>
-      <p>حط المشاهد في CapCut أو Premiere. طبّق قاعدة الـ 2 ثانية بصرامة. الإعلان بعد الإديت المفروض يحس أسرع وأكثر طاقة من قبله.</p>
     </div>
   </div>
 </div>
 
-<div class="day-section">
+<div id="day17" class="day-section">
   <div class="day-header">
     <div class="day-badge">اليوم 17 و 18</div>
-    <div class="day-title">🔊 هندسة الصوت والنصوص — Sound & Captions</div>
+    <div class="day-title">🔊 هندسة الصوت والنصوص</div>
   </div>
   <div class="day-content">
-    <p>الصوت بيمثل 50% من واقعية الـ AI. إعلان بدون مؤثرات صوتية بيحس "ناقص روح". كمان الكابتشن دلوقتي ضروري لأن 85% من الناس بتتفرج بالصوت مكتوم.</p>
-
+    <p>الصوت بيمثل 50% من واقعية الـ AI. 85% بيتفرجوا من غير صوت، فالكابتشن مهم.</p>
     <ul class="bullet-list">
-      <li><strong>Whoosh:</strong> عند كل انتقال للقطة — بيضيف إحساس بالسرعة.</li>
-      <li><strong>Riser:</strong> قبل ظهور المنتج — بيبني التوقع.</li>
-      <li><strong>Bass Hit:</strong> مع أقوى لحظة في الإعلان — بيضرب الدماغ بالانتباه.</li>
-      <li><strong>Subtle Background Music:</strong> موسيقى خلفية هادية بتديه طابع احترافي.</li>
+      <li><strong>Whoosh:</strong> عند كل انتقال للقطة.</li>
+      <li><strong>Riser:</strong> قبل ظهور المنتج بيبني التوقع.</li>
     </ul>
-
     <div class="warning-box">
-      <div class="warning-label">⚠️ الـ Safe Zones — المناطق الآمنة</div>
-      <p>على موبايل، الأزرار والـ UI بتغطي الجزء السفلي والجانبي من الشاشة. الكابتشن لازم يكون في المنتصف، وخلي 15% من كل جانب فاضي على الأقل.</p>
+      <div class="warning-label">⚠️ المناطق الآمنة (Safe Zones)</div>
+      <p>على الموبايل، الأزرار بتغطي يمين وتحت الشاشة. الكابتشن لازم يكون في المنتصف، وخلي 15% من كل جانب فاضي.</p>
     </div>
-
-    <div class="task-box">
-      <div class="task-label">✅ مهمة التنفيذ</div>
-      <p>أضف SFX لكل إعلان + كابتشن ديناميكي. اتأكد من احترام المناطق الآمنة. النتيجة: عندك 10 إعلانات Master جاهزة.</p>
+    
+    <div>
+      <img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?auto=format&fit=crop&q=80&w=800" class="book-image" alt="توضيح مناطق الموبايل الآمنة">
+      <p class="image-caption">👆 دائماً ضع النصوص في منتصف الشاشة بعيداً عن أزرار التفاعل</p>
     </div>
   </div>
 </div>
 
-<div class="day-section">
+<div id="day19" class="day-section">
   <div class="day-header">
     <div class="day-badge">اليوم 19 و 20</div>
-    <div class="day-title">🔥 مصنع النسخ المتعددة — The Variation Matrix (سر الـ 1%)</div>
+    <div class="day-title">🔥 مصفوفة الـ 80 إعلان (سر وكالات النخبة)</div>
   </div>
   <div class="day-content">
-    <p>المحترف مش بيصنع إعلان واحد. بيصنع "مصفوفة اختبار" كاملة. ده الفرق بين فريلانسر بيدفعله 50$ وشريك استراتيجي بيدفعله 2000$.</p>
-
+    
     <div class="secret-box">
-  <div class="secret-label">🔐 الحسبة السحرية لوكالات النخبة (The 80-Ad Matrix)</div>
-  <p>المبتدئ بيختبر الخطاف (Hook) عشان يجيب انتباه. المحترف بيختبر الـ CTA كمان عشان يجيب الفلوس والـ CTR!</p>
-  <p>لكل إعلان أساسي، هنختبر الأطراف (البداية والنهاية):</p>
-  <ul class="bullet-list">
-    <li><strong>4 خطاطيف بصرية (Hooks):</strong> لمعرفة إيه اللي بيوقّف التمرير (بيحل مشكلة الـ Hook Rate).</li>
-    <li><strong>2 دعوة للإجراء (CTAs):</strong> عشان نعرف إيه اللي بيخليه يضغط. إياك تختبر (اشتري الآن) ضد (تسوق الآن)، ده غباء. اختبر دافعين مختلفين:
-      <br><em>- <strong>(Hard Sell):</strong> "الكمية محدودة! اطلب دلوقتي بخصم 40%." (للمشتري المندفع).</em>
-      <br><em>- <strong>(Soft Sell):</strong> "عايز تعرف السر؟ اضغط هنا وشوف النتيجة بنفسك." (للمشتري المتردد).</em>
-    </li>
-  </ul>
-  <p><strong>المعادلة:</strong> 10 إعلانات × 4 خطاطيف × 2 CTA = <strong style="color: #00C897; font-size: 18px;">80 نسخة إعلانية جاهزة للاختبار!</strong></p>
-</div>
+      <div class="secret-label">🔐 الحسبة السحرية لوكالات النخبة (The 80-Ad Matrix)</div>
+      <p>المبتدئ بيختبر الخطاف (Hook) عشان يجيب انتباه. المحترف بيختبر الـ CTA كمان عشان يجيب الفلوس والـ CTR!</p>
+      <p>لكل إعلان أساسي، هنختبر الأطراف (البداية والنهاية):</p>
+      <ul class="bullet-list">
+        <li><strong>4 خطاطيف بصرية (Hooks):</strong> لمعرفة إيه اللي بيوقّف التمرير (يحل مشكلة Hook Rate).</li>
+        <li><strong>2 دعوة للإجراء (CTAs):</strong> عشان نعرف إيه اللي بيخليه يضغط. اختبر دافعين مختلفين:
+          <br><em>- <strong>(Hard Sell):</strong> "الكمية محدودة! اطلب دلوقتي بخصم 40%." (للمندفع).</em>
+          <br><em>- <strong>(Soft Sell):</strong> "عايز تعرف السر؟ اضغط هنا وشوف النتيجة بنفسك." (للمتردد).</em>
+        </li>
+      </ul>
+      <p><strong>المعادلة:</strong> 10 إعلانات × 4 خطاطيف × 2 CTA = <strong style="color: #00C897; font-size: 18px;">80 نسخة إعلانية جاهزة للاختبار!</strong></p>
+    </div>
 
-<div class="warning-box">
-  <div class="warning-label">⚠️ تحذير ميزانية الاختبار (مهم جداً للعميل)</div>
-  <p>إياك تخلي العميل يرفع الـ 80 فيديو مع بعض في حملة واحدة! الخوارزمية هتتشتت والميزانية هتتحرق.</p>
-  <p><strong>الترتيب الصح للاختبار (عزل المتغيرات):</strong></p>
-  <p>1. <strong>المرحلة الأولى:</strong> اختبر الـ 4 Hooks الأول (بنهاية CTA واحدة ثابتة للكل) لمدة 3 أيام.</p>
-  <p>2. <strong>المرحلة الثانية:</strong> لما تلاقي "الخطاف الكسبان"، خد الفيديو ده واعمل منه نسختين بالـ 2 CTAs المختلفين، واختبرهم قصاد بعض عشان تعصُر أعلى نسبة نقر (CTR) ومبيعات!</p>
-</div>
-
-    <p>أنواع الـ Variations:</p>
-    <ul class="num-list">
-      <li><span class="num">1</span><span><strong>Visual Hook Swap:</strong> غيّر المشهد الأول بس — نفس الإعلان، خطاف بصري مختلف.</span></li>
-      <li><span class="num">2</span><span><strong>Text Hook Swap:</strong> غيّر النص المكتوب في أول 3 ثواني.</span></li>
-      <li><span class="num">3</span><span><strong>Music Swap:</strong> غيّر الموسيقى الخلفية — بيغيّر المزاج كلياً.</span></li>
-      <li><span class="num">4</span><span><strong>Color Grade Swap:</strong> غيّر درجة الألوان — بارد مقابل دافئ.</span></li>
-    </ul>
-
-    <div class="task-box">
-      <div class="task-label">✅ مهمة التنفيذ</div>
-      <p>خذ الـ 10 إعلانات الأساسية وعمل 4 variations لكل واحد بتغيير أول 3 ثواني فقط. النتيجة: 40 إعلان جاهز للرفع والاختبار.</p>
+    <div class="warning-box">
+      <div class="warning-label">⚠️ تحذير ميزانية الاختبار (مهم جداً للعميل)</div>
+      <p>إياك تخلي العميل يرفع الـ 80 فيديو مع بعض في حملة واحدة! الخوارزمية هتتشتت والميزانية هتتحرق.</p>
+      <p><strong>الترتيب الصح للاختبار (عزل المتغيرات):</strong></p>
+      <p>1. <strong>المرحلة الأولى:</strong> اختبر الـ 4 Hooks الأول (بنهاية CTA واحدة ثابتة للكل) لمدة 3 أيام.</p>
+      <p>2. <strong>المرحلة الثانية:</strong> لما تلاقي "الخطاف الكسبان"، خد الفيديو ده واعمل منه نسختين بالـ 2 CTAs المختلفين، واختبرهم قصاد بعض عشان تعصُر أعلى نسبة نقر (CTR) ومبيعات!</p>
     </div>
   </div>
 </div>
 
-<div class="day-section">
+<div id="day21" class="day-section">
   <div class="day-header">
     <div class="day-badge">اليوم 21</div>
     <div class="day-title">📊 لغة الأرقام — Media Buying Metrics</div>
   </div>
   <div class="day-content">
-    <p>لازم تتكلم بلغة الـ Media Buyer علشان تشخّص الإعلان وتعرف تصلح الغلط.</p>
-
+    <p>لازم تتكلم بلغة الـ Media Buyer علشان تشخّص الإعلان.</p>
     <div class="table-wrapper">
-    <table class="data-table">
-      <tr><th>المقياس</th><th>بنشوفه إزاي</th><th>لو ضعيف</th><th>الحل</th></tr>
-      <tr><td>Hook Rate</td><td>أقل من 25%؟</td><td>المشكلة في أول 3 ثواني</td><td>غيّر المشهد الافتتاحي</td></tr>
-      <tr><td>Hold Rate</td><td>الناس بتتمرر بسرعة</td><td>المشكلة في المونتاج</td><td>سرّع الإيقاع وأضف SFX</td></tr>
-      <tr><td>CTR</td><td>نسبة النقر منخفضة</td><td>المشاهد مش مقتنع</td><td>غيّر الـ Offer أو الـ CTA</td></tr>
-      <tr><td>CPA</td><td>تكلفة الاستحواذ عالية</td><td>المنتج مش مناسب للجمهور</td><td>غيّر الزاوية النفسية</td></tr>
-      <tr><td>Thumb Stop Rate</td><td>أقل من 30%؟</td><td>الخطاف ضعيف</td><td>اختبر خطاطيف كسر النمط</td></tr>
-    </table>
-      </div>
+      <table class="data-table">
+        <tr><th>المقياس</th><th>بنشوفه إزاي</th><th>الحل إذا كان ضعيفاً</th></tr>
+        <tr><td>Hook Rate</td><td>أقل من 25%؟</td><td>غيّر المشهد الافتتاحي (أول 3 ثواني)</td></tr>
+        <tr><td>Hold Rate</td><td>الناس بتتمرر في النص</td><td>سرّع الإيقاع وأضف مؤثرات صوتية</td></tr>
+        <tr><td>CTR</td><td>نسبة النقر منخفضة</td><td>غيّر العرض (Offer) أو الـ CTA</td></tr>
+        <tr><td>CPA</td><td>تكلفة استحواذ عالية</td><td>غيّر الزاوية النفسية كلها</td></tr>
+      </table>
+    </div>
   </div>
 </div>
 
-
-<!-- ===== WEEK 4 ===== -->
 <div class="chapter-cover">
   <div class="chapter-number">04</div>
   <div class="chapter-week-badge week4-badge">الأسبوع الرابع</div>
   <div class="chapter-title">💼 الإمبراطورية<br>رجل الأعمال وصيد العملاء</div>
-  <div class="chapter-goal">الهدف: أنت دلوقتي صانع إعلانات محترف. حان الوقت تحوّل المهارة دي لماكينة أموال ووكالة حقيقية.</div>
+  <div class="chapter-goal">الهدف: أنت دلوقتي صانع إعلانات محترف. حان الوقت تحوّل المهارة دي لوكالة حقيقية.</div>
 </div>
 
-<div class="day-section">
+<div id="day22" class="day-section">
   <div class="day-header">
     <div class="day-badge">اليوم 22 و 23</div>
     <div class="day-title">🎯 قوة التخصص — Niche Selection</div>
   </div>
   <div class="day-content">
-    <p>اللي بيستهدف الكل، مش بيبيع لحد. التخصص هو سلاحك الأقوى كمبتدئ.</p>
-
-    <div class="theory-box">
-      <p><strong>ليه التخصص بيربّح أكتر؟</strong> لأن العميل بيدفع أكتر لشخص يقوله "أنا متخصص في إعلانات مستحضرات التجميل" من شخص يقوله "أنا بعمل كل حاجة".</p>
-    </div>
-
-    <p>أفضل المجالات للمبتدئين:</p>
-    <ul class="num-list">
-      <li><span class="num">1</span><span><strong>Beauty & Skincare:</strong> قرار الشراء عاطفي، المرأة تحب الإعلانات الجميلة، والأسعار عالية.</span></li>
-      <li><span class="num">2</span><span><strong>E-commerce & Dropshipping:</strong> أصحابه بيختبروا إعلانات طول الوقت ومحتاجين كميات.</span></li>
-      <li><span class="num">3</span><span><strong>Fitness & Supplements:</strong> سوق ضخم، المحتوى التحويلي قوي (قبل/بعد).</span></li>
-      <li><span class="num">4</span><span><strong>SaaS & Tech Apps:</strong> بتدفع أعلى، بس تحتاج فهم أعمق للمنتج.</span></li>
-    </ul>
-
-    <div class="task-box">
-      <div class="task-label">✅ مهمة التنفيذ</div>
-      <p>اختار مجالين بس تشتغل فيهم. التخصص بيخليك تبدو خبير، وبيتيح لك إعادة استخدام نفس الـ Prompts والسكربتات مع كل عميل جديد.</p>
-    </div>
+    <p>اللي بيستهدف الكل، مش بيبيع لحد. التخصص بيخليك تبدو خبير، وبيتيح لك إعادة استخدام الـ Prompts مع كل عميل.</p>
+    <p>أفضل المجالات: العناية بالبشرة والتجميل، الدروبشيبينج، المكملات الغذائية، وتطبيقات الـ SaaS.</p>
   </div>
 </div>
 
-<div class="day-section">
+<div id="day24" class="day-section">
   <div class="day-header">
     <div class="day-badge">اليوم 24 و 25</div>
-    <div class="day-title">🏆 بورتفوليو النخبة — The Elite Portfolio</div>
+    <div class="day-title">🏆 بورتفوليو النخبة</div>
   </div>
   <div class="day-content">
-    <p>متبعتش للعميل Google Drive مليان فيديوهات عشوائية. ده بيقلّل قيمتك فوراً.</p>
-
-    <div class="info-box">
-      <p><strong>هيكل Case Study الاحترافي:</strong></p>
-      <p>1️⃣ المشكلة التسويقية للبراند — "كان CPA عالي وHook Rate منخفض"</p>
-      <p>2️⃣ الزاوية اللي ابتكرتها — "استخدمنا زاوية الفضول + كسر النمط"</p>
-      <p>3️⃣ التنفيذ بالـ AI — "أنتجنا 4 إعلانات أساسية + 16 نسخة"</p>
-      <p>4️⃣ النتايج — "Hook Rate ارتفع من 18% لـ 42%"</p>
-    </div>
-
-    <div class="task-box">
-      <div class="task-label">✅ مهمة التنفيذ</div>
-      <p>اعمل صفحة مجانية على Notion واعرض أعمالك كـ Case Studies. لو مالكش عملاء حقيقيين لسه، اعمل 3 Case Studies افتراضية لبراندات حقيقية (حتى لو مدفعوش) كـ "تجربة شخصية".</p>
-    </div>
+    <p>متبعتش Google Drive عشوائي. اعمل صفحة Notion واعرض أعمالك كـ "دراسات حالة" (Case Studies):</p>
+    <ul class="bullet-list">
+      <li>المشكلة التسويقية للبراند</li>
+      <li>الزاوية اللي ابتكرتها</li>
+      <li>النسخ الـ 80 اللي عملتها للاختبار</li>
+    </ul>
   </div>
 </div>
 
-<div class="day-section">
+<div id="day26" class="day-section">
   <div class="day-header">
     <div class="day-badge">اليوم 26 و 27</div>
-    <div class="day-title">💰 تسعير الباقات الاحترافية — Retainer Pricing</div>
+    <div class="day-title">💰 تسعير الباقات الاحترافية</div>
   </div>
   <div class="day-content">
-    <p>متبيعش "فيديو واحد بـ 50 دولار". إنت مش بتبيع فيديوهات. إنت بتبيع نظام للنمو.</p>
-
+    <p>إياك أن تبيع فيديو واحد بـ 50$. أنت تبيع باقات اختبار شهرية (Retainers).</p>
     <div class="table-wrapper">
-    <table class="data-table">
-      <tr><th>الباقة</th><th>المحتوى</th><th>السعر الشهري</th><th>الوصف</th></tr>
-      <tr><td>🥉 Starter</td><td>4 إعلانات + 8 نسخ</td><td>$800 — $1,200</td><td>للشركات الصغيرة والمتاجر الناشئة</td></tr>
-      <tr><td>🥈 Growth</td><td>8 إعلانات + 24 نسخة</td><td>$1,500 — $2,500</td><td>للبراندات اللي بتنمو وعندها budget</td></tr>
-      <tr><td>🥇 Scale</td><td>15 إعلان + 60 نسخة + تقرير داتا</td><td>$3,500 — $5,000</td><td>للوكالات والبراندات الكبيرة</td></tr>
-    </table>
-</div>
-      
-    <div class="secret-box">
-      <div class="secret-label">🔐 سر التسعير العالي</div>
-      <p>مبرّرش السعر. بدله، اشرح الـ ROI. "باقتنا بـ 2000$ تجيب 10x لو اشتغلت الإعلانات صح. إيه الـ Budget اللي إنت مستعد تصرفه على الإعلانات شهرياً؟"</p>
+      <table class="data-table">
+        <tr><th>الباقة</th><th>المحتوى</th><th>السعر الشهري</th></tr>
+        <tr><td>Starter</td><td>4 إعلانات + 16 نسخة</td><td>$800 — $1,200</td></tr>
+        <tr><td>Growth</td><td>8 إعلانات + 32 نسخة</td><td>$1,500 — $2,500</td></tr>
+      </table>
+    </div>
+
+    <div class="theory-box">
+      <p><strong>🔴 فخ الـ 1500$ للمبتدئين (The Paid Pilot):</strong></p>
+      <p>أول عميل ليك غالباً مش هيدفعلك 1500$ لأن معندكش سابقة أعمال قوية (Portfolio). <strong>أول عميل هو "حقل تجارب مدفوع".</strong></p>
+      <p>اقبل تشتغل أول شهر بـ 300$ أو 500$ لتغطية تكاليف الـ AI مقابل إنك تاخد الأرقام والنتايج (Case Study). النتايج دي هي اللي هتجيبلك العميل التاني والثالث بـ 1500$ وأنت واثق من نفسك.</p>
     </div>
   </div>
-
-  <div class="theory-box">
-  <p><strong>🔴 فخ الـ 1500$ للمبتدئين (The Paid Pilot):</strong></p>
-  <p>أول عميل ليك غالباً مش هيدفعلك 1500$ لأن معندكش سابقة أعمال قوية (Portfolio). <strong>أول عميل هو "حقل تجارب مدفوع".</strong></p>
-  <p>اقبل تشتغل أول شهر بـ 300$ أو 500$ لتغطية تكاليف الـ AI مقابل إنك تاخد الأرقام والنتايج (Case Study). النتايج دي هي اللي هتجيبلك العميل التاني والثالث بـ 1500$ وأنت واثق من نفسك.</p>
-</div>
 </div>
 
-<div class="day-section">
+<div id="day28" class="day-section">
   <div class="day-header">
     <div class="day-badge">اليوم 28 و 29</div>
-    <div class="day-title">🎣 صيد العملاء بالطُعم — Cold Outreach</div>
+    <div class="day-title">🎣 صيد العملاء بالطُعم (Cold Outreach)</div>
   </div>
   <div class="day-content">
-    <p>الاستراتيجية الأقوى لجلب عملاء بدون ميزانية إعلانات: إرسال عينة مجانية مخصصة لمنتجهم كطُعم لمكالمة بيعية.</p>
-
-    <ul class="num-list">
-      <li><span class="num">1</span><span>ابحث عن 20 براند يومياً في مجالك المختار على Instagram/TikTok.</span></li>
-      <li><span class="num">2</span><span>اعمل إعلان تجريبي مجاني لمنتجهم الأكثر مبيعاً (5 دقايق شغل بالـ AI).</span></li>
-      <li><span class="num">3</span><span>ابعت الرسالة الموجودة في الملحق رقم 4 مع الإعلان.</span></li>
-      <li><span class="num">4</span><span>الناس اللي بتردوا، كملّ معاهم مكالمة بيعية (الفصل الخامس).</span></li>
-    </ul>
-
-    <div class="task-box">
-      <div class="task-label">✅ مهمة التنفيذ</div>
-      <p>ابدأ بـ 10 رسائل يوم 28 و10 رسائل يوم 29. تتبع النتايج في جدول: (التواصل — الرد — المكالمة — الإغلاق).</p>
-    </div>
+    <p>اعمل إعلان تجريبي مجاني لمنتج براند مستهدف (5 دقايق شغل بالـ AI). ابعتلهم رسالة، وقدمها كعينة مجانية لخفض الـ CPA لديهم مقابل جدولة مكالمة مبيعات.</p>
   </div>
 </div>
 
-<div class="day-section">
+<div id="day30" class="day-section">
   <div class="day-header">
     <div class="day-badge">اليوم 30</div>
-    <div class="day-title">🚀 يوم الإطلاق الرسمي — Launch Day</div>
+    <div class="day-title">🚀 يوم الإطلاق الرسمي</div>
   </div>
   <div class="day-content">
-    <p>راجع كل أنظمتك. تدرب على مكالمات الإغلاق. افتح حساباتك المهنية رسمياً. إنت مش صانع فيديوهات. إنت <strong>شريك نمو (Growth Partner)</strong>.</p>
-
-    <div class="result-box">
-      <div class="result-title">🎉 تهانينا على إتمام الـ 30 يوم!</div>
-      <p>إنت دلوقتي عندك المهارات، المواد، والأنظمة. المرحلة الجاية هي الممارسة الحقيقية.</p>
-    </div>
+    <p>راجع كل أنظمتك. تدرب على مكالمات الإغلاق. إنت دلوقتي مش صانع فيديوهات، إنت شريك نمو (Growth Partner).</p>
   </div>
 </div>
 
-
-<!-- ===== CHAPTER 5: SALES ===== -->
-<div class="chapter-cover">
-  <div class="chapter-number">05</div>
-  <div class="chapter-week-badge week5-badge">✨ فصل جديد</div>
-  <div class="chapter-title">🤝 البيع والإغلاق<br>من "أهلاً" لـ "ابعت الفاتورة"</div>
-  <div class="chapter-goal">الهدف: تحويل كل مكالمة لصفقة مربحة. لأن المهارة بدون بيع = هواية، مش بزنس.</div>
-</div>
-
-<h2>سيناريو مكالمة البيع الكاملة (30-45 دقيقة)</h2>
-
+<h2 id="chap5">الفصل 5: البيع والإغلاق (من "أهلاً" للـ "الفاتورة")</h2>
 <div class="day-section">
-  <div class="day-header">
-    <div class="day-badge">الدقيقة 0-5</div>
-    <div class="day-title">البداية: الاتصال الإنساني</div>
-  </div>
   <div class="day-content">
-    <p>متبدأش ببيع. ابدأ بفهم الإنسان اللي قدامك. سؤالين فاتحين:</p>
-    <div class="theory-box">
-      <p>"قبل ما نبدأ، عايز أفهم بزنسك كويس — عملت إيه في الفترة الأخيرة حسيت إنه شغل؟"</p>
-      <p>"إيه أكبر تحدي بتواجهه دلوقتي في الإعلانات؟"</p>
-    </div>
-    <p>استمع أكتر من ما تتكلم. دوّن الكلمات اللي بيستخدمها العميل — هتستخدمها بعدين في عرضك.</p>
-  </div>
-</div>
-
-<div class="day-section">
-  <div class="day-header">
-    <div class="day-badge">الدقيقة 5-15</div>
-    <div class="day-title">التشخيص: الأسئلة الذهبية</div>
-  </div>
-  <div class="day-content">
+    <p>في مكالمة المبيعات، استخدم إطار الطبيب:</p>
     <ul class="bullet-list">
-      <li>"إيه الـ CPA الحالي عندك، وإيه الـ Target؟"</li>
-      <li>"قد إيه بتصرف على الإعلانات شهرياً؟"</li>
-      <li>"بتشغّل الإعلانات إنت ولا معاك حد؟"</li>
-      <li>"لو حل مشكلة الإعلانات، ده هيأثر إزاي على الريفنيو؟"</li>
-      <li>"إيه اللي بتنتظره من الشخص اللي هتشتغل معاه؟"</li>
+      <li><strong>الاستكشاف:</strong> "إيه أكبر تحدي بتواجهه في الإعلانات حالياً؟"</li>
+      <li><strong>التشخيص:</strong> "إعلاناتكم بتعاني من إرهاق بصري. محتاجين زوايا جديدة."</li>
+      <li><strong>العرض:</strong> "أنا هسلمك مصفوفة من 80 نسخة إعلانية لنختبر أفضل خطاف."</li>
+      <li><strong>الإغلاق:</strong> قول السعر واسكت تماماً. متبررش السعر.</li>
     </ul>
-    <div class="info-box">
-      <p><strong>💡 سر السؤال الأخير:</strong> بيخليك تعرف معيار الحكم عنده. لو قالك "محتاج نتايج سريعة"، ركّز على سرعة الإنتاج في عرضك.</p>
-    </div>
-  </div>
-</div>
-
-<div class="day-section">
-  <div class="day-header">
-    <div class="day-badge">الدقيقة 15-25</div>
-    <div class="day-title">العرض: "ربط الحل بألمه هو"</div>
-  </div>
-  <div class="day-content">
-    <p>مش بتعرض "خدمتك". بتعرض "حله":</p>
     <div class="theory-box">
-      <p>"إنت قلتلي إن أكبر مشكلتك هي [كرر كلامه بالحرف]. اللي هعمله معاك هو [الحل]. النتيجة اللي بتوقعها في 30 يوم هي [نتيجة واقعية]."</p>
-    </div>
-
-    <p>اعرض الباقة المناسبة بثقة، مش بتسأل:</p>
-    <div class="theory-box">
-      <p>"باقة Growth مناسبة جداً لحجم بزنسك. هنبدأ بـ $1,500 في الشهر الأول ونشوف الأرقام مع بعض."</p>
+      <p><strong>الرد على الاعتراضات:</strong></p>
+      <p>العميل: "عندي حد بيعمل ده بـ 100$"</p>
+      <p>ردك: "ممتاز! بيعمل معاك Variation Testing للـ Hooks والـ CTAs؟ بيبعتلك تقرير Hook Rate كل أسبوع؟ لو آه، استمر معاه. لو لا، ده بالظبط الفرق اللي بيكلفك آلاف الدولارات في مدير الإعلانات."</p>
     </div>
   </div>
 </div>
 
-<div class="day-section">
-  <div class="day-header">
-    <div class="day-badge">الدقيقة 25-35</div>
-    <div class="day-title">الاعتراضات: الردود الاحترافية</div>
-  </div>
-  <div class="day-content">
-
-    <div class="table-wrapper">
-    <table class="data-table">
-      <tr><th>الاعتراض</th><th>الرد الاحترافي</th></tr>
-      <tr><td>"السعر غالي"</td><td>"أفهم. بس خليني أسألك: لو الإعلانات جابت ضعف المبيعات، هل الـ 1500$ هتحس إنهم غاليين؟ — السعر مش غالي لو العائد بيبرره."</td></tr>
-      <tr><td>"محتاج أفكّر"</td><td>"أكيد! إيه التفكير اللي إنت فيه تحديداً؟ في حاجة مش واضحة ممكن أوضّحها دلوقتي؟"</td></tr>
-      <tr><td>"هجرّب حد تاني أول"</td><td>"منطقي جداً. أنا مش بطلب منك تاخد قرار دلوقتي. بس خليني أبعتلك بعد المكالمة ملف مقارنة بسيط يوضّح الفرق."</td></tr>
-      <tr><td>"مش مقتنع بالـ AI"</td><td>"ده بالظبط اللي لفت نظري في براندك. لأن عملاءك الأكبر لسه مش شايفين إعلانات AI متقنة. ده ميزتك."</td></tr>
-      <tr><td>"عندي حد بيعمل ده بـ 200$"</td><td>"ممتاز! بتعمل معاه Variation Testing؟ بيبعتلك Hook Rate وHold Rate كل أسبوع؟ — لو آه، استنا بيه. لو لا، ده بالظبط الفرق."</td></tr>
-    </table>
-      </div>
-  </div>
-</div>
-
-<div class="day-section">
-  <div class="day-header">
-    <div class="day-badge">الدقيقة 35-45</div>
-    <div class="day-title">الإغلاق: 3 تقنيات مضمونة</div>
-  </div>
-  <div class="day-content">
-    <ul class="num-list">
-      <li><span class="num">1</span><span><strong>الإغلاق بالتلخيص:</strong> "إحنا اتفقنا على [X]، والسعر [Y]، والبداية [Z]. كل حاجة واضحة؟ نبدأ؟"</span></li>
-      <li><span class="num">2</span><span><strong>الإغلاق بالسؤال البسيط:</strong> "بتفضّل تدفع PayPal ولا Transfer؟"</span></li>
-      <li><span class="num">3</span><span><strong>الإغلاق بالمحدودية:</strong> "أنا بقبل 3 عملاء جدد بس الشهر ده. لو عايز تبدأ، لازم نحجز موعدك دلوقتي."</span></li>
-    </ul>
-
-    <div class="warning-box">
-      <div class="warning-label">🚨 خطأ قاتل: الصمت بعد عرض السعر</div>
-      <p>بعد ما تقول السعر، اسكت. الصمت بيضغط. المبيعاتية الضعيفة بيتكلموا ويكسروا الصمت بأعذار وخصومات. إنت هتسكت وتستنى رده.</p>
-    </div>
-  </div>
-</div>
-
-
-<!-- ===== CHAPTER 6: LEGAL ===== -->
-<div class="chapter-cover">
-  <div class="chapter-number">06</div>
-  <div class="chapter-week-badge bonus-badge">✨ فصل جديد</div>
-  <div class="chapter-title">⚖️ الحماية القانونية<br>احمي نفسك قبل ما تدخل فلوس</div>
-  <div class="chapter-goal">الهدف: عميل واحد غلط من غير عقد يقدر يضيّع شهور شغلك. الحماية القانونية مش نظرية، دي ضرورة.</div>
-</div>
-
-<h2>المبادئ القانونية الأساسية للفريلانسر</h2>
-
+<h2 id="chap6">الفصل 6: الحماية القانونية واستلام الفلوس</h2>
 <div class="day-section">
   <div class="day-content">
-    <ul class="num-list">
-      <li><span class="num">1</span><span><strong>لا شغل بدون عقد مكتوب:</strong> حتى لو العميل صاحبك. الكلام الشفهي مش بيحمي أي حاجة.</span></li>
-      <li><span class="num">2</span><span><strong>50% مقدم قبل ما تبدأ:</strong> مبدأ ثابت. مش مناقشة. لو رفض، ده علامة تحذير.</span></li>
-      <li><span class="num">3</span><span><strong>حقوق الملكية الفكرية:</strong> ببقى ملكيتك لحين دفع الفلوس كاملة.</span></li>
-      <li><span class="num">4</span><span><strong>الإفصاح عن الـ AI:</strong> في بعض الأسواق والمنصات مطلوب إنك تذكر إن المحتوى بالذكاء الاصطناعي. اتأكد.</span></li>
-      <li><span class="num">5</span><span><strong>حقوق الموسيقى:</strong> استخدم مقاطع من مكتبات مرخصة زي Artlist أو Epidemic Sound أو ما يُصرّح به Meta/TikTok مباشرة.</span></li>
-    </ul>
-  </div>
-</div>
-
-<div class="contract-box">
-  <h3>📄 نموذج العقد الأساسي (قابل للتعديل)</h3>
-
-  <p><strong>عقد خدمات إنتاج إعلانات بالذكاء الاصطناعي</strong></p>
-  <p>تاريخ العقد: _______________</p>
-
-  <p><strong>الطرف الأول (مقدم الخدمة):</strong></p>
-  <div class="contract-field">الاسم: _________________________ | وسيلة التواصل: _________________________</div>
-
-  <p><strong>الطرف الثاني (العميل):</strong></p>
-  <div class="contract-field">اسم الشركة/البراند: _________________________ | الممثل: _________________________</div>
-
-  <p><strong>بنود الاتفاقية:</strong></p>
-
-  <p><strong>1. نطاق الخدمة:</strong> يلتزم الطرف الأول بتقديم [عدد الإعلانات] إعلان فيديو بالذكاء الاصطناعي + [عدد النسخ] نسخة متعددة شهرياً وفقاً للباقة المتفق عليها.</p>
-
-  <p><strong>2. شروط الدفع:</strong> يُدفع 50% من قيمة العقد مقدماً قبل بدء العمل، و50% عند التسليم النهائي.</p>
-
-  <p><strong>3. مدة العقد:</strong> ___ شهر/أشهر قابل للتجديد بالاتفاق.</p>
-
-  <p><strong>4. حقوق الملكية الفكرية:</strong> تنتقل ملكية المحتوى للطرف الثاني بالكامل فور اكتمال السداد.</p>
-
-  <p><strong>5. التعديلات:</strong> يحق للطرف الثاني طلب [عدد] تعديلات مجانية. كل تعديل إضافي يحتسب بـ $___.</p>
-
-  <p><strong>6. الأدوات والبرامج:</strong> يتحمل الطرف الأول تكاليف أدوات الـ AI المستخدمة في الإنتاج، ما لم يُتفق على غير ذلك.</p>
-
-  <p><strong>7. الإفصاح:</strong> يُفصح الطرف الأول عند الطلب عن كون المحتوى مُنتجاً بتقنية الذكاء الاصطناعي.</p>
-
-  <p><strong>8. السرية:</strong> يلتزم الطرف الأول بعدم مشاركة أي معلومات تجارية خاصة بالطرف الثاني مع أطراف خارجية.</p>
-
-  <p><strong>9. فسخ العقد:</strong> يحق لأي من الطرفين إنهاء العقد بإشعار مسبق [عدد الأيام] يوماً. المبالغ المدفوعة غير قابلة للاسترداد عن العمل المنجز.</p>
-
-  <div class="contract-field">توقيع الطرف الأول: _________________________ | التاريخ: _____________</div>
-  <div class="contract-field">توقيع الطرف الثاني: _________________________ | التاريخ: _____________</div>
-</div>
-
-  <div class="info-box">
-  <p><strong>💳 إزاي تستلم فلوسك كفريلانسر عربي؟</strong></p>
-  <p>عملاء الخليج أو أمريكا مش هيدفعوا فودافون كاش! جهّز بوابات الدفع دي قبل مكالمة البيع:</p>
-  <ul class="bullet-list">
-    <li><strong>Payoneer / Wise:</strong> لعمل فواتير احترافية واستلام دولار على حساب بنكي أمريكي/أوروبي.</li>
-    <li><strong>USDT (Binance Pay):</strong> ممتاز وسريع ومفيش عمولات بنكية لو العميل متفهم للكريبتو.</li>
-    <li><strong>منصات العمل الحر:</strong> (Upwork / مستقل) كطريقة آمنة لضمان حقك لو العميل قلقان يدفع مقدم مباشر (اطلب منه يغطّي عمولة المنصة).</li>
-  </ul>
-</div>
-
-
-<!-- ===== CHAPTER 7: CLIENT MANAGEMENT ===== -->
-<div class="chapter-cover">
-  <div class="chapter-number">07</div>
-  <div class="chapter-week-badge bonus-badge">✨ فصل جديد</div>
-  <div class="chapter-title">📋 إدارة العملاء<br>Onboarding واحترافية التسليم</div>
-  <div class="chapter-goal">الهدف: اللي بيحصل بعد "نعم" بيحدد إذا كان العميل هيجدد معاك أو لا. الاحترافية بتبدأ من أول إيميل.</div>
-</div>
-
-<h2>نظام Onboarding العميل الجديد</h2>
-
-<div class="day-section">
-  <div class="day-header">
-    <div class="day-badge">الخطوة 1</div>
-    <div class="day-title">إيميل الترحيب (خلال 24 ساعة من الدفع)</div>
-  </div>
-  <div class="day-content">
-    <div class="prompt-box">
-      <div class="prompt-header">📧 نموذج إيميل الترحيب</div>
-      <strong>الموضوع:</strong> مرحباً [اسم البراند] — خطواتنا الأولى مع بعض 🚀<br><br>
-      أهلاً [الاسم]،<br><br>
-      سعيد جداً إن هنشتغل مع بعض. لبدء الشغل بأسرع وقت ممكن، محتاج منك الحاجات الجاية في خلال 48 ساعة:<br><br>
-      <em>📦 مواد البراند:</em> لوجو (PNG شفاف) + ألوان البراند (كود الهكس) + فونت البراند<br>
-      <em>📸 مواد المنتج:</em> صور عالية الجودة للمنتج + فيديوهات موجودة (لو في)<br>
-      <em>📝 البريف:</em> فيه معلومات عن جمهورك المستهدف وأهدافك<br><br>
-      هبدأ في إنتاج أول مجموعة فور استلام المواد.<br><br>
-      أي سؤال، أنا هنا.<br>
-      [اسمك]
-    </div>
-  </div>
-</div>
-
-<div class="day-section">
-  <div class="day-header">
-    <div class="day-badge">الخطوة 2</div>
-    <div class="day-title">استمارة البريف (Brand Brief Form)</div>
-  </div>
-  <div class="day-content">
-    <p>اعمل فورم على Google Forms أو Notion فيه الأسئلة دي:</p>
-    <ul class="bullet-list">
-      <li><strong>اسم المنتج وميزته الأساسية:</strong> إيه المشكلة اللي بيحلها؟</li>
-      <li><strong>الجمهور المستهدف:</strong> العمر، الجنس، الاهتمامات، الألم الأساسي.</li>
-      <li><strong>المنصات المستهدفة:</strong> TikTok / Instagram Reels / Meta Ads؟</li>
-      <li><strong>المنافسون:</strong> مين المنافسين وإيه اللي بتعمله مختلف؟</li>
-      <li><strong>أمثلة إعلانات بتحبها:</strong> روابط لإعلانات ألهمتك.</li>
-      <li><strong>الأشياء اللي مش عايزها:</strong> حاجات يجب تجنبها في الإعلان.</li>
-      <li><strong>نبرة البراند:</strong> رسمي / شبابي / حنوّن / جريء؟</li>
-    </ul>
-  </div>
-</div>
-
-<div class="day-section">
-  <div class="day-header">
-    <div class="day-badge">الخطوة 3</div>
-    <div class="day-title">نظام التسليم الاحترافي</div>
-  </div>
-  <div class="day-content">
-    <div class="theory-box">
-      <p><strong>متبعتش لينك Google Drive خام أبداً.</strong></p>
-      <p>بدله: اعمل صفحة Notion للعميل فيها:</p>
-    </div>
-    <ul class="bullet-list">
-      <li>✅ الإعلانات النهائية مُصنّفة حسب الـ Variation</li>
-      <li>✅ تقرير قصير: إيه الزاوية النفسية لكل إعلان وكيف تختبره</li>
-      <li>✅ تعليمات رفع الإعلانات على كل منصة</li>
-      <li>✅ نصائح للـ A/B Testing: أيه النسخ تشغّل مع بعض</li>
-    </ul>
-
-    <div class="info-box">
-      <p><strong>💡 سر الـ Renewal:</strong> العميل اللي بيحس إن فيه "قيمة مضافة" مع كل تسليم (مش بس فيديوهات) هو اللي بيجدد. الصفحة دي بتحسسه إنك شريك مش مجرد منتج محتوى.</p>
-    </div>
-  </div>
-</div>
-
-<div class="day-section">
-  <div class="day-header">
-    <div class="day-badge">الخطوة 4</div>
-    <div class="day-title">التقرير الشهري (Monthly Performance Report)</div>
-  </div>
-  <div class="day-content">
-    <p>في نهاية كل شهر، ابعت تقرير بسيط فيه:</p>
-    <ul class="bullet-list">
-      <li>عدد الإعلانات والنسخ اللي سلّمتها</li>
-      <li>Hook Rate وHold Rate للإعلانات اللي اتشغّلت (لو بيشاركوك النتايج)</li>
-      <li>توصياتك للشهر الجاي</li>
-      <li>اقتراح للأشهر القادمة (Upsell طبيعي)</li>
-    </ul>
-
-    <div class="secret-box">
-      <div class="secret-label">🔐 سر الـ Upsell</div>
-      <p>"الشهر الجاي ممكن نضيف 4 إعلانات Testimonial بصوت حقيقي من ElevenLabs — ده بيرفع الـ Trust بشكل كبير. باقة إضافية بـ $400 بس."</p>
-    </div>
-  </div>
-</div>
-
-
-<!-- ===== CHAPTER 8: PERSONAL BRAND ===== -->
-<div class="chapter-cover">
-  <div class="chapter-number">08</div>
-  <div class="chapter-week-badge bonus-badge">✨ فصل جديد</div>
-  <div class="chapter-title">📱 البراند الشخصي<br>التسويق الصامت اللي بيجيبلك عملاء</div>
-  <div class="chapter-goal">الهدف: بناء حضور رقمي يجعل العملاء يجوا إليك بدلاً من إنت تجري وراهم.</div>
-</div>
-
-<h2>استراتيجية المحتوى الثلاثي</h2>
-
-<div class="day-section">
-  <div class="day-content">
-    <ul class="num-list">
-      <li><span class="num">1</span><span><strong>LinkedIn — للـ B2B والاحترافيين:</strong> انشر "تحليلات الإعلانات" أسبوعياً. مثال: "حللت 50 إعلان على Meta الأسبوع ده، الخطاطيف دي اشتغلت أحسن." الـ B2B بيدفع أكتر.</span></li>
-      <li><span class="num">2</span><span><strong>TikTok / Instagram Reels — لعرض الشغل:</strong> انشر إعلاناتك كـ "Before/After" أو "How I made this in 30 min." الفيديو نفسه هو الـ Portfolio.</span></li>
-      <li><span class="num">3</span><span><strong>Twitter/X — للـ Thought Leadership:</strong> شارك insights قصيرة ومركّزة. مثال: "90% من الـ AI Ads بتفشل لأن المشكلة في الـ Hook مش في الصورة."</span></li>
-    </ul>
-  </div>
-</div>
-
-<h2>جدول النشر الأسبوعي (3 ساعات فقط!)</h2>
-
-  <div class="table-wrapper">
-<table class="data-table">
-  <tr><th>اليوم</th><th>المنصة</th><th>نوع المحتوى</th><th>الوقت</th></tr>
-  <tr><td>الإثنين</td><td>LinkedIn</td><td>تحليل إعلان ناجح (نص + صورة)</td><td>30 دقيقة</td></tr>
-  <tr><td>الأربعاء</td><td>TikTok/Reels</td><td>عرض عملية الإنتاج (Behind the scenes)</td><td>45 دقيقة</td></tr>
-  <tr><td>الجمعة</td><td>X/Twitter</td><td>Tip قصيرة عن الإعلانات أو الـ AI</td><td>15 دقيقة</td></tr>
-  <tr><td>الأحد</td><td>LinkedIn</td><td>Case Study مختصرة أو نتيجة العميل</td><td>30 دقيقة</td></tr>
-</table>
-</div>
+    <p>لا تعمل بدون عقد. اطلب 50% مقدماً دائماً. وحقوق الملكية للعميل بعد سداد المبلغ كامل.</p>
     
-<div class="secret-box">
-  <div class="secret-label">🔐 الـ Content Flywheel (عجلة المحتوى)</div>
-  <p>اعمل إعلان لعميل → انشره كـ Case Study → الناس بتشوفه وبتطلبك → بتعمل لهم إعلانات → انشرها كـ Case Study جديدة. ده نظام ذاتي الاستدامة بيجيب عملاء مجاناً.</p>
-</div>
-
-
-<!-- ===== CHAPTER 9: SCALING ===== -->
-<div class="chapter-cover">
-  <div class="chapter-number">09</div>
-  <div class="chapter-week-badge bonus-badge">✨ فصل جديد</div>
-  <div class="chapter-title">📈 التوسع والأتمتة<br>من فريلانسر لوكالة حقيقية</div>
-  <div class="chapter-goal">الهدف: بناء نظام يشتغل بدونك، علشان تكون إنت صاحب الوكالة مش الموظف الوحيد فيها.</div>
-</div>
-
-<h2>مراحل النمو: خارطة الـ 12 شهر</h2>
-
-<div class="roadmap-item">
-  <div class="roadmap-icon rm-gold">1</div>
-  <div class="roadmap-content">
-    <h3>الشهر 1-3: الفريلانسر الاحترافي</h3>
-    <p>اكسب أول 3 عملاء Retainer. ركّز على الجودة والعلاقات. لا توظّف حد. افهم الشغل جيداً قبل تتوسع. الهدف: $1,500 — $4,500 شهرياً.</p>
+    <div class="info-box">
+      <p><strong>💳 إزاي تستلم فلوسك كفريلانسر عربي؟</strong></p>
+      <p>عملاء الخليج أو أمريكا مش هيدفعوا فودافون كاش! جهّز بوابات الدفع دي قبل مكالمة البيع:</p>
+      <ul class="bullet-list">
+        <li><strong>Payoneer / Wise:</strong> لعمل فواتير احترافية واستلام دولار على حساب بنكي.</li>
+        <li><strong>USDT (Binance Pay):</strong> ممتاز وسريع ومفيش عمولات بنكية لو العميل متفهم للكريبتو.</li>
+        <li><strong>منصات العمل الحر:</strong> (Upwork / مستقل) كطريقة آمنة لضمان حقك لو العميل قلقان يدفع مقدم مباشر (اطلب منه يغطّي عمولة المنصة).</li>
+      </ul>
+    </div>
   </div>
 </div>
 
-<div class="roadmap-item">
-  <div class="roadmap-icon rm-green">2</div>
-  <div class="roadmap-content">
-    <h3>الشهر 4-6: الأتمتة الأولى</h3>
-    <p>ابدأ توظّف VA (مساعد افتراضي) يعمل الأجزاء المتكررة: Prompt generation، تنظيم الملفات، إرسال الرسائل. ركّز إنت على الاستراتيجية والمبيعات. الهدف: $5,000 — $8,000 شهرياً.</p>
+<h2 id="chap7">الفصل 7: إدارة العملاء (Onboarding)</h2>
+<div class="day-section">
+  <div class="day-content">
+    <p>بمجرد دفع الفلوس، أرسل للعميل استمارة (Briefing Form) ليرفع فيها اللوجو والصور وأكواد الألوان. التسليم النهائي يكون عبر صفحة Notion منظمة تحوي الفيديوهات وتعليمات رفعها، وليس مجرد رابط Drive.</p>
   </div>
 </div>
 
-<div class="roadmap-item">
-  <div class="roadmap-icon rm-purple">3</div>
-  <div class="roadmap-content">
-    <h3>الشهر 7-9: التوسع الأول</h3>
-    <p>وظّف Editor متخصص. دلوقتي إنت بتبيع وبتستراتيج، والتنفيذ على الفريق. اقبل عملاء أكبر بباقات أعلى. الهدف: $10,000 — $15,000 شهرياً.</p>
+<h2 id="chap8">الفصل 8: بناء البراند الشخصي الموازي</h2>
+<div class="day-section">
+  <div class="day-content">
+    <p>التواصل البارد مرهق. لكي تجعل العملاء يأتوا إليك:</p>
+    <ul class="bullet-list">
+      <li><strong>LinkedIn:</strong> انشر تحليلات إعلانات ناجحة للوصول للـ B2B.</li>
+      <li><strong>TikTok/Reels:</strong> انشر الفيديوهات التي تصنعها بالـ AI لتكون البورتفوليو الحي الخاص بك.</li>
+    </ul>
   </div>
 </div>
 
-<div class="roadmap-item">
-  <div class="roadmap-icon rm-gold">4</div>
-  <div class="roadmap-content">
-    <h3>الشهر 10-12: الوكالة الحقيقية</h3>
-    <p>سمّي وكالتك. وظّف Account Manager يتعامل مع العملاء. إنت بقيت صاحب الوكالة. بدأ تفكّر في منتجات رقمية (كورسات، ملاحق) كـ Passive Income. الهدف: $20,000+ شهرياً.</p>
+<h2 id="chap9">الفصل 9: التوسع والأتمتة</h2>
+<div class="day-section">
+  <div class="day-content">
+    <p>الخطوة الأولى للتوسع عندما تصل لـ 3 عملاء ثابتين هي **توظيف Video Editor**. المونتاج يأخذ 60% من وقتك. تفرغ أنت لكتابة الاستراتيجية، الأوامر (Prompts)، ومكالمات المبيعات.</p>
   </div>
 </div>
 
-<h2>متى توظّف أول حد؟</h2>
-
-<div class="warning-box">
-  <div class="warning-label">⚠️ متوظّفش لحد ما...</div>
-  <p>يكون عندك 3+ عملاء ثابتين وبتشعر إن الوقت هو العائق الوحيد للنمو. التوظيف قبل ده هو أكبر سبب لإفلاس الفريلانسرين المبتدئين.</p>
-</div>
-
-<h2>أدوات الأتمتة اللي هتوفرلك 15 ساعة أسبوعياً</h2>
-
-  <div class="table-wrapper">
-<table class="data-table">
-  <tr><th>الأداة</th><th>الوظيفة</th><th>الوقت اللي بتوفره</th></tr>
-  <tr><td>Zapier / Make</td><td>ربط Google Forms بـ Notion تلقائياً</td><td>3 ساعات/أسبوع</td></tr>
-  <tr><td>Calendly</td><td>حجز المواعيد أوتوماتيك بدون رسائل</td><td>2 ساعة/أسبوع</td></tr>
-  <tr><td>Notion AI</td><td>توليد تقارير العملاء الشهرية</td><td>4 ساعات/شهر</td></tr>
-  <tr><td>Buffer / Later</td><td>جدولة المحتوى تلقائياً لأسبوع كامل</td><td>3 ساعات/أسبوع</td></tr>
-  <tr><td>Loom</td><td>فيديوهات تسليم بدل اجتماعات طويلة</td><td>2 ساعة/أسبوع</td></tr>
-</table>
-</div>
-
-<!-- ===== APPENDICES ===== -->
-
-<div class="appendix-cover">
+<div id="appendices" class="appendix-cover">
   <div class="appendix-num">🔐</div>
   <div class="appendix-title">الخزنة السرية</div>
-  <div class="appendix-subtitle">10 أدوات غش مشروعة — انسخ وألصق مباشرة</div>
+  <div class="appendix-subtitle">10 ملاحق للغش المشروع — انسخ وألصق مباشرة</div>
 </div>
 
-<!-- Appendix 1 -->
-<div class="day-section">
+<div id="appendix1" class="day-section">
   <div class="day-header">
     <div class="day-badge">الملحق 1</div>
-    <div class="day-title">🎣 Super-Prompt لتوليد 20 خطاف احترافي</div>
+    <div class="day-title">🎣 Super-Prompt لتوليد الخطاطيف</div>
   </div>
   <div class="day-content">
     <div class="prompt-box">
-      <div class="prompt-header">📋 انسخ والصق في ChatGPT أو Claude</div>
-      إنت خبير تسويق استجابة مباشرة (Direct Response Marketer) وكاتب Copywriter نخبوي لمنصات TikTok و Meta.<br><br>
-      منتجي هو: <strong>[اسم المنتج]</strong><br>
-      المشكلة اللي بيحلها: <strong>[اكتب المشكلة]</strong><br>
-      الجمهور المستهدف: <strong>[العمر / الجنس / الاهتمامات]</strong><br><br>
-      اكتبلي 20 خطاف (Hook) قوي جداً بيخطف الانتباه في أول 3 ثواني، مقسمة كده (5 لكل فئة):<br><br>
-      <em>1. خطاف ألم شديد (Pain Hook)</em><br>
-      <em>2. خطاف فضول وكسر النمط (Curiosity & Pattern Interrupt)</em><br>
-      <em>3. خطاف صدمة وتحذير (Shocking Claim)</em><br>
-      <em>4. خطاف رغبة وتحول (Desire/Transformation)</em><br><br>
-      القواعد:<br>
-      - الجملة مش أكتر من 8 كلمات<br>
-      - لغة طبيعية ودارجة (مش فصحى)<br>
-      - اذكر جنب كل خطاف "فكرة بصرية سريعة" تناسبه للـ AI<br>
-      - رتبهم من الأقوى للأضعف في رأيك
+      إنت خبير تسويق استجابة مباشرة (Direct Response Marketer) لمنصات TikTok و Meta.<br><br>
+      المنتج: <strong>[اسم المنتج]</strong><br>
+      المشكلة: <strong>[المشكلة اللي بيحلها]</strong><br><br>
+      اكتبلي 20 خطاف (Hook) بيخطف الانتباه في أول 3 ثواني، مقسمة:<br>
+      1. خطاف ألم (Pain Hook)<br>
+      2. خطاف فضول وكسر النمط (Pattern Interrupt)<br>
+      3. خطاف صدمة (Shocking Claim)<br>
+      4. خطاف رغبة وتحول (Desire)<br><br>
+      القواعد: الجمل مش أكتر من 8 كلمات. لغة طبيعية دارجة. اذكر جنب كل خطاف "فكرة بصرية سريعة" تناسبه للـ AI.
     </div>
   </div>
 </div>
 
-<!-- Appendix 2 -->
-<div class="day-section">
+<div id="appendix2" class="day-section">
   <div class="day-header">
     <div class="day-badge">الملحق 2</div>
     <div class="day-title">📝 البرومبت المزدوج للسكربت والمشاهد</div>
   </div>
   <div class="day-content">
     <div class="prompt-box">
-      <div class="prompt-header">📋 بعد اختيار خطاف، الصق ده في ChatGPT</div>
       إنت مخرج إعلانات AI ومونتير أداء محترف.<br><br>
       الخطاف: <strong>[ضع الخطاف هنا]</strong><br>
-      المنتج: <strong>[اسم المنتج]</strong><br>
-      الجمهور: <strong>[وصف مختصر]</strong><br><br>
-      اكتبلي سكربت إعلاني مدته 20-30 ثانية باستخدام إطار:<br>
-      Hook → Problem Agitation → Solution → Proof → CTA<br><br>
+      المنتج: <strong>[اسم المنتج]</strong><br><br>
+      اكتبلي سكربت إعلاني مدته 20-30 ثانية باستخدام إطار (Hook → Problem Agitation → Solution → Proof → CTA).<br><br>
       المخرجات في جدول 3 أعمدة:<br>
-      <em>العمود 1: الثواني (مثال: 0-3 ثواني)</em><br>
-      <em>العمود 2: التعليق الصوتي والنصوص</em><br>
-      <em>العمود 3: الوصف البصري بالإنجليزي للـ AI</em><br>
-      (اذكر نوع اللقطة وحركة الكاميرا بوضوح)<br><br>
-      مهم: التغيير البصري كل ثانيتين كحد أقصى
+      العمود 1: الثواني (مثال 0-3)<br>
+      العمود 2: التعليق الصوتي والنصوص<br>
+      العمود 3: الوصف البصري بالإنجليزي للـ AI (اذكر نوع اللقطة وحركة الكاميرا بوضوح). التغيير البصري كل ثانيتين كحد أقصى.
     </div>
   </div>
 </div>
 
-<!-- Appendix 3 -->
-<div class="day-section">
+<div id="appendix3" class="day-section">
   <div class="day-header">
     <div class="day-badge">الملحق 3</div>
-    <div class="day-title">🎥 المعادلة الذهبية لتوليد مشاهد الـ AI</div>
+    <div class="day-title">🎥 المعادلة الذهبية لتوليد المشاهد AI</div>
   </div>
   <div class="day-content">
     <div class="formula-box">
       [الموضوع/المنتج] + [البيئة/السياق] + [حركة الكاميرا/نوع اللقطة] + [الإضاءة] + [الأسلوب] + [--no قيود سلبية]
     </div>
-
     <div class="prompt-box">
-      <div class="prompt-header">✅ مثال عملي احترافي</div>
-      "Premium glass perfume bottle resting on a dark wet marble pedestal, shallow depth of field, warm cinematic golden hour lighting, camera slowly pushes in and orbits slightly to the right, hyper-realistic commercial advertisement style, 8k resolution. --no text, no distortion, no deformed shapes, no blurry product label."
-    </div>
-
-    <div class="prompt-box">
-      <div class="prompt-header">✅ مثال لمنتج Beauty</div>
-      "Close-up of luxurious face serum dropper releasing a golden liquid drop into a crystal clear bowl, surrounded by fresh rose petals and ice cubes, soft diffused studio lighting with subtle bokeh background, slow motion cinematic effect, ultra-detailed 4k commercial ad. --no text overlay, no artificial looking skin."
-    </div>
-
-    <div class="prompt-box">
-      <div class="prompt-header">✅ مثال لإعلان Fitness</div>
-      "Athletic woman in her 30s drinking a green protein shake post-workout in a modern gym, sweat glistening on skin, dynamic handheld camera following her movement, energetic upbeat lighting, real UGC style authentic footage, motivational atmosphere. --no unrealistic body proportions, no studio lighting."
+      <strong>مثال فاخر (جاهز للنسخ في Runway / Veo):</strong><br>
+      Premium glass perfume bottle resting on a dark wet marble pedestal, shallow depth of field, warm cinematic golden hour lighting, camera slowly pushes in and orbits slightly to the right, hyper-realistic commercial ad style, 8k resolution. --no text, no distortion, no deformed shapes.
     </div>
   </div>
 </div>
 
-<!-- Appendix 4 -->
-<div class="day-section">
+<div id="appendix4" class="day-section">
   <div class="day-header">
     <div class="day-badge">الملحق 4</div>
-    <div class="day-title">🤝 رسالة الطُعم لصيد العملاء</div>
+    <div class="day-title">🤝 رسالة صيد العملاء (Cold DM)</div>
   </div>
   <div class="day-content">
     <div class="prompt-box">
-      <div class="prompt-header">📧 نسخة إيميل احترافية</div>
       الموضوع: فيديو تجريبي لـ [اسم المنتج] — بدون أي التزام<br><br>
       أهلاً [اسم صاحب البراند]،<br><br>
-      أنا بتابع علامتكم التجارية من فترة وبحب جداً [ذكر شيء محدد عن البراند — ده بيثبت إنك مش بتبعت spam].<br><br>
-      وأنا بتصفح إعلاناتكم، لاحظت إن الفيديوهات ممتازة لكنها ممكن تستفيد من خطاطيف بصرية أقوى في أول 3 ثواني — ده بيأثر مباشرة على الـ CPA والـ Hook Rate.<br><br>
-      بصفتي متخصص في إعلانات الفيديو بالذكاء الاصطناعي، عملت إعلان تجريبي لمنتجكم الأخير [اذكر المنتج] كعينة مجانية.<br><br>
-      الفيديو جاهز — هل تمانع أبعتهولك هنا عشان تقيّمه؟ (مفيش أي التزام أو تكلفة).<br><br>
+      بتابع علامتكم وبحب جداً تفاصيل منتجاتكم. وأنا بتصفح إعلاناتكم، لاحظت إن الفيديوهات ممكن تستفيد من خطاطيف بصرية أقوى في أول 3 ثواني — ده بيقلل الـ CPA جداً.<br><br>
+      بصفتي متخصص في إعلانات الـ AI، عملت إعلان تجريبي لـ [المنتج] كعينة مجانية. الفيديو جاهز — هل تمانع أبعتهولك هنا تقيّمه؟ (مفيش أي التزام من طرفك).<br><br>
       تحياتي، [اسمك]
     </div>
-
-    <div class="prompt-box">
-      <div class="prompt-header">📱 نسخة DM قصيرة (Instagram/TikTok)</div>
-      أهلاً [الاسم]، شغلكم حلو جداً 🔥<br><br>
-      عملت إعلان AI تجريبي لـ [المنتج] — لاقيت طريقة تخفّض الـ CPA بخطاف أقوى.<br><br>
-      أبعتهولك؟ مجاناً خالص وبدون أي التزام.
-    </div>
   </div>
 </div>
 
-<!-- Appendix 5 -->
-<div class="day-section">
+<div id="appendix5" class="day-section">
   <div class="day-header">
     <div class="day-badge">الملحق 5</div>
-    <div class="day-title">⚙️ ترسانة الأدوات المعتمدة — The 1% Tech Stack</div>
+    <div class="day-title">⚙️ ترسانة أدوات الـ 1% المعتمدة</div>
   </div>
   <div class="day-content">
     <div class="table-wrapper">
-    <table class="data-table">
-      <tr><th>الفئة</th><th>الأداة</th><th>الاستخدام</th><th>التكلفة التقريبية</th></tr>
-      <tr><td>النص والسكربت</td><td>ChatGPT Plus / Claude</td><td>توليد خطاطيف وسكربتات</td><td>$20/شهر</td></tr>
-      <tr><td>توليد الفيديو</td><td>Runway Gen-4</td><td>تحكم دقيق وImage-to-Video</td><td>$15-95/شهر</td></tr>
-      <tr><td>توليد الفيديو</td><td>Google Veo 3</td><td>مشاهد سينمائية عميقة</td><td>عبر Google AI</td></tr>
-      <tr><td>توليد الصور</td><td>Midjourney V7</td><td>مرجعية بصرية للمنتجات</td><td>$10-60/شهر</td></tr>
-      <tr><td>الصوت</td><td>ElevenLabs</td><td>تعليق صوتي بشري واقعي</td><td>$5-22/شهر</td></tr>
-      <tr><td>الأفاتار</td><td>HeyGen</td><td>شخصية AI ناطقة</td><td>$29-89/شهر</td></tr>
-      <tr><td>المونتاج السريع</td><td>CapCut Pro</td><td>مونتاج سريع للموبايل</td><td>$8/شهر</td></tr>
-      <tr><td>المونتاج الاحترافي</td><td>Adobe Premiere Pro</td><td>مونتاج متقدم</td><td>$55/شهر</td></tr>
-      <tr><td>التنظيم</td><td>Notion</td><td>Swipe File وإدارة العملاء</td><td>مجاني/$8</td></tr>
-      <tr><td>الموسيقى</td><td>Epidemic Sound</td><td>موسيقى مرخصة للإعلانات</td><td>$15/شهر</td></tr>
-    </table>
-      </div>
-
-    <div class="info-box">
-      <p><strong>💡 للمبتدئ:</strong> ابدأ بـ ChatGPT ($20) + Runway ($15) + CapCut (مجاني) + ElevenLabs ($5) = <strong>$40 شهرياً فقط.</strong> كافية تجيبلك أول عميل بـ $1,000.</p>
+      <table class="data-table">
+        <tr><th>الاستخدام</th><th>الأداة</th><th>التكلفة التقريبية</th></tr>
+        <tr><td>العصف الذهني والسكربت</td><td>ChatGPT Plus / Claude 3.5</td><td>$20/شهر</td></tr>
+        <tr><td>توليد الفيديو (الأساس)</td><td>Runway Gen-4 / Veo 3 / Luma</td><td>$15-$95/شهر</td></tr>
+        <tr><td>توليد صور المنتجات</td><td>Midjourney V7 / Flux</td><td>$10-$60/شهر</td></tr>
+        <tr><td>التعليق الصوتي والاستنساخ</td><td>ElevenLabs</td><td>$5-$22/شهر</td></tr>
+        <tr><td>الأفاتار والـ Lip-sync</td><td>HeyGen / Hedra</td><td>$29/شهر</td></tr>
+        <tr><td>المونتاج السريع والديناميكي</td><td>CapCut Pro</td><td>$8/شهر</td></tr>
+      </table>
     </div>
   </div>
 </div>
 
-<!-- Appendix 6 -->
-<div class="day-section">
+<div id="appendix6" class="day-section">
   <div class="day-header">
-    <div class="day-badge">الملحق 6</div>
-    <div class="day-title">🗓️ خارطة الـ 90 يوم ما بعد المعسكر</div>
+    <div class="day-badge">الملحق 6-10</div>
+    <div class="day-title">📑 ملخصات البزنس والتوسع</div>
   </div>
   <div class="day-content">
-    <div class="table-wrapper">
-    <table class="data-table">
-      <tr><th>الأسبوع</th><th>الهدف</th><th>الإجراءات</th><th>المؤشر</th></tr>
-      <tr><td>1-2</td><td>أول عميل</td><td>ابعت 40 رسالة Cold Outreach + 2 إعلان تجريبي مجاني</td><td>رد من 5 براندات</td></tr>
-      <tr><td>3-4</td><td>إغلاق أول صفقة</td><td>مكالمتين بيع في الأسبوع + Onboarding</td><td>$800-1,500 دخل</td></tr>
-      <tr><td>5-6</td><td>تحسين النظام</td><td>راجع نتايج أول عميل + انشر Case Study</td><td>بداية LinkedIn</td></tr>
-      <tr><td>7-8</td><td>عميل ثاني</td><td>كمّل Cold Outreach + استخدم Case Study كـ دليل</td><td>$2,000-3,000/شهر</td></tr>
-      <tr><td>9-10</td><td>تحسين الإنتاج</td><td>بناء Swipe File أضخم + تجربة أدوات جديدة</td><td>وقت الإنتاج نزل 30%</td></tr>
-      <tr><td>11-12</td><td>عميل ثالث + تجديد</td><td>طلب تجديد من العميل الأول + Upsell</td><td>$4,000-6,000/شهر</td></tr>
-    </table>
-      </div>
-  </div>
-</div>
-
-<!-- Appendix 7 -->
-<div class="day-section">
-  <div class="day-header">
-    <div class="day-badge">الملحق 7</div>
-    <div class="day-title">💬 سيناريوهات الردود على الاعتراضات (المتقدمة)</div>
-  </div>
-  <div class="day-content">
-    <h3>الاعتراضات المتقدمة وإزاي تتعامل معاها</h3>
-
-    <div class="theory-box">
-      <p><strong>🔴 "إحنا بنعمل الإعلانات داخلياً"</strong></p>
-      <p>"ممتاز! ده يعني عندكم فريق بيفهم بزنسكم. أنا مش هنا أستبدلهم، هنا أساعدهم يطلعوا كميات أكبر للاختبار. فريقكم يعمل 4 إعلانات في الشهر؟ أنا ممكن أضيف 16 نسخة variation يقدروا يختبروها — ده بيرفع فرص النجاح 4 أضعاف."</p>
-    </div>
-
-    <div class="theory-box">
-      <p><strong>🔴 "إحنا مش مقتنعين بجودة الـ AI"</strong></p>
-      <p>"بفهم. 6 أشهر فات كنت زيك. بس الـ AI اللي إنت شايفه على تيك توك مش نفس الـ AI اللي بيستخدمه المحترفين. [ابعتهم عينة فيديو] — قيّمها بنفسك."</p>
-    </div>
-
-    <div class="theory-box">
-      <p><strong>🔴 "مش عندنا Budget دلوقتي"</strong></p>
-      <p>"بفهم. بس خليني أسألك: لو مفيش budget للإعلانات، إزاي هتجيب عملاء جدد؟ — مش لازم تبدأ بأعلى باقة. عندي Starter بـ $600 بس الشهر. ده أقل من تكلفة موظف نص وقت. وبيجيب 16 نسخة للاختبار."</p>
-    </div>
-
-    <div class="theory-box">
-      <p><strong>🔴 "محتاج أشاور شريكي/مديري أول"</strong></p>
-      <p>"أكيد! لو حاتشاوروا مع بعض، هل ممكن أكون في الاجتماع ده؟ ممكن يكون Virtual. عشان لو كان عندهم أسئلة تقنية، أكون موجود أجاوب عليها."</p>
-    </div>
-  </div>
-</div>
-
-<!-- Appendix 8 -->
-<div class="day-section">
-  <div class="day-header">
-    <div class="day-badge">الملحق 8</div>
-    <div class="day-title">🧠 الملحق النفسي: التعامل مع الرفض والبطء</div>
-  </div>
-  <div class="day-content">
-    <p>الـ 30 يوم الأولى هي الأصعب. مش لأن المهارة ضعيفة، لكن لأن الدماغ بيقاوم.</p>
-
-    <div class="warning-box">
-      <div class="warning-label">🚨 الأعراض الطبيعية في الأسبوع الأول (متخفش)</div>
-      <p>إحساس إن "الشغل مش كافي" — طبيعي. اعمله على أي حال.</p>
-      <p>رد سلبي أو صمت من عملاء — طبيعي. الأرقام بيلعبوا دور. من كل 20 رسالة، رد 2.</p>
-      <p>إحساس إن "في حد تاني أحسن مني" — طبيعي. إنت مش بتتنافس مع الكل، بتتنافس مع نفسك إمبارح.</p>
-    </div>
-
-    <ul class="num-list">
-      <li><span class="num">1</span><span><strong>قانون 100:</strong> ابعت 100 رسالة قبل ما تحكم على النتايج. الواحدة مش بيانات. المية بيانات.</span></li>
-      <li><span class="num">2</span><span><strong>قياس الجهد مش النتيجة:</strong> في الأيام الأولى، قيس كم رسالة بعتها، مش كم عميل اتجاوب. الجهد في إيدك، النتيجة مش في إيدك.</span></li>
-      <li><span class="num">3</span><span><strong>احتفل بالرفض:</strong> كل "لا" بتقربك من "آه". إحصائياً، لو عندك نسبة رد 10%، كل 10 رفضات معناها إنك اقتربت من رد إيجابي واحد.</span></li>
-      <li><span class="num">4</span><span><strong>المجتمع والمحاسبة:</strong> ابحث عن مجتمع من الناس اللي بيعملوا نفس الشيء. المحاسبة الاجتماعية بتضاعف الاستمرار.</span></li>
+    <ul class="bullet-list">
+      <li><strong>ملحق 6 (خارطة 90 يوم):</strong> ركز الشهر الأول على بناء الـ Portfolio، الشهر الثاني على إرسال 100 رسالة باردة للحصول على أول Paid Pilot، الشهر الثالث لطلب التجديد بسعر أعلى.</li>
+      <li><strong>ملحق 7 (العقد):</strong> ضع بنداً صريحاً يتيح لك دورتي تعديلات مجانية فقط، وأي إعادة توليد مشاهد AI من الصفر تُسعر بالساعة.</li>
+      <li><strong>ملحق 8 (النفسية):</strong> في أول أسبوع سيرفضك الجميع. هذا طبيعي. استخدم قانون الـ 100: لا تحكم على النتيجة قبل مراسلة 100 شخص.</li>
+      <li><strong>ملحق 9 (المحاسبة):</strong> افصل حساب الشغل عن حسابك الشخصي منذ أول دولار يدخل لك.</li>
+      <li><strong>ملحق 10 (القاموس):</strong> ROAS (العائد على الإنفاق)، CTR (نسبة النقر)، CPA (تكلفة الاستحواذ)، UGC (محتوى يشبه المستخدمين).</li>
     </ul>
   </div>
 </div>
 
-<!-- Appendix 9 -->
-<div class="day-section">
-  <div class="day-header">
-    <div class="day-badge">الملحق 9</div>
-    <div class="day-title">💸 المحاسبة البسيطة للمبتدئ</div>
-  </div>
-  <div class="day-content">
-    <p>مش محتاج تعلم محاسبة متقدمة. محتاج تعرف 3 أرقام بس:</p>
-
-    <div class="theory-box">
-      <p><strong>1. الإيرادات (Revenue):</strong> كل الفلوس اللي دخلت شهرياً.</p>
-      <p><strong>2. المصروفات (Expenses):</strong> أدوات الـ AI + إيه تاني بتصرفه على الشغل.</p>
-      <p><strong>3. الأرباح الصافية (Net Profit):</strong> الإيرادات ناقص المصروفات.</p>
-    </div>
-
-    <div class="table-wrapper">
-    <table class="data-table">
-      <tr><th>البند</th><th>المبلغ الشهري</th><th>ملاحظات</th></tr>
-      <tr><td>أدوات AI (الحد الأدنى)</td><td>$40-80</td><td>ChatGPT + Runway + ElevenLabs</td></tr>
-      <tr><td>أدوات AI (المتوسط)</td><td>$150-250</td><td>+ Midjourney + HeyGen + Premiere</td></tr>
-      <tr><td>موسيقى مرخصة</td><td>$15</td><td>Epidemic Sound أو Artlist</td></tr>
-      <tr><td>تنظيم المشاريع</td><td>$8</td><td>Notion Pro</td></tr>
-      <tr><td><strong>المجموع الأدنى</strong></td><td><strong>$63</strong></td><td>للمبتدئ الجاد</td></tr>
-    </table>
-</div>
-    
-    <div class="secret-box">
-      <div class="secret-label">🔐 نصيحة الضرايب</div>
-      <p>افتح حساب بنكي منفصل لأموال الشغل من اليوم الأول. ده بيبسّط الحياة جداً وبيحميك من إنك تخلط الشخصي بالمهني. في معظم الدول، مصاريف الأدوات والبرامج تُخصم من الضرايب.</p>
-    </div>
-  </div>
-</div>
-
-<!-- Appendix 10 -->
-<div class="day-section">
-  <div class="day-header">
-    <div class="day-badge">الملحق 10</div>
-    <div class="day-title">📊 قاموس المصطلحات الأساسية</div>
-  </div>
-  <div class="day-content">
-    <div class="table-wrapper">
-    <table class="data-table">
-      <tr><th>المصطلح</th><th>المعنى</th><th>الأهمية</th></tr>
-      <tr><td>Hook Rate</td><td>% المشاهدين اللي فضلوا أكتر من 3 ثواني</td><td>أقل من 25% = Hook ضعيف</td></tr>
-      <tr><td>Hold Rate</td><td>متوسط نسبة اكتمال الفيديو</td><td>أقل من 50% = مونتاج بطيء</td></tr>
-      <tr><td>CTR</td><td>Click Through Rate — نسبة النقر على الإعلان</td><td>أقل من 1% = CTA ضعيف</td></tr>
-      <tr><td>CPA</td><td>Cost Per Acquisition — تكلفة اكتساب عميل</td><td>كل صناعة ليها Benchmark مختلف</td></tr>
-      <tr><td>ROAS</td><td>Return On Ad Spend — العائد على إنفاق الإعلانات</td><td>3x = جيد، 5x+ = ممتاز</td></tr>
-      <tr><td>UGC</td><td>User Generated Content — محتوى يشبه تصوير المستخدمين</td><td>أعلى Conversion من الإعلانات التقليدية</td></tr>
-      <tr><td>Retainer</td><td>عقد شهري ثابت</td><td>ده الدخل المنتظم الحقيقي</td></tr>
-      <tr><td>Variation</td><td>نسخة مختلفة من نفس الإعلان للاختبار</td><td>كلما زادت، زادت فرصة الفوز</td></tr>
-      <tr><td>A/B Testing</td><td>اختبار نسختين مع بعض لمعرفة الأفضل</td><td>أساس تحسين الأداء</td></tr>
-      <tr><td>Thumb Stop Rate</td><td>% الناس اللي وقّفت التمرير</td><td>يقيس قوة أول لحظة</td></tr>
-      <tr><td>Cold Outreach</td><td>التواصل مع عملاء ما عرفوكش قبل كده</td><td>أسرع طريقة للعملاء الأوايل</td></tr>
-      <tr><td>Onboarding</td><td>عملية استقبال العميل الجديد وتعريفه بنظام الشغل</td><td>بيحدد رضا العميل على المدى البعيد</td></tr>
-    </table>
-      </div>
-  </div>
-</div>
-
-
-<!-- ===== FINAL PAGE ===== -->
 <div class="final-page">
   <div class="cover-badge">🎓 نهاية المعسكر</div>
   <div class="final-title">بداية إمبراطوريتك</div>
-  <div class="final-subtitle">إنت دلوقتي عندك كل حاجة. الفرق بينك وبين الـ 1% هو حاجة واحدة بس: التنفيذ.</div>
+  <div class="final-subtitle">الفرق بينك وبين الـ 1% هو حاجة واحدة بس: التنفيذ.</div>
   <div class="cover-divider"></div>
   <div style="color: #808090; font-size: 15px; max-width: 600px; margin: 0 auto;">
     <p style="margin-bottom: 15px;">"المعرفة بدون تطبيق هي وهم الإنجاز."</p>
-    <p>ابدأ بأول خطوة: افتح ChatGPT، الصق الملحق رقم 1، واختار منتج. ده هو اليوم الأول من إمبراطوريتك.</p>
-  </div>
-  <div class="cover-stats" style="margin-top: 50px;">
-    <div class="stat-box"><span class="stat-num">30</span><span class="stat-label">يوم معسكر</span></div>
-    <div class="stat-box"><span class="stat-num">∞</span><span class="stat-label">إمكانيات</span></div>
-    <div class="stat-box"><span class="stat-num">1</span><span class="stat-label">قرار يغير كل حاجة</span></div>
+    <p>ابدأ بأول خطوة: افتح ChatGPT، الصق الملحق رقم 1، واختار منتج. ده هو اليوم الأول لإمبراطوريتك.</p>
   </div>
 </div>
 
-</div><!-- end page -->
-</body>
+</div></body>
 </html>

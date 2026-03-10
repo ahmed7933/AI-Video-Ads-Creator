@@ -714,9 +714,38 @@
 
   .emoji { font-style: normal; }
 
+.book-image { width: 100%; max-width: 700px; border-radius: 12px; border: 1px solid rgba(201,168,76,0.3); margin: 25px auto; display: block; box-shadow: 0 5px 15px rgba(0,0,0,0.4); }
+.image-caption { text-align: center; color: var(--text-muted); font-size: 13.5px; margin-top: 10px; }
+  
+ /* ===== PRINT CSS (CRITICAL FOR PDF EXPORT) ===== */
   @media print {
-    body { background: white; color: black; }
-    .page { padding: 30px; }
+    body, .page { background: #ffffff !important; color: #000000 !important; max-width: 100% !important; padding: 0 !important; }
+    .cover, .chapter-cover, .manifesto, .appendix-cover, .final-page, .toc {
+      background: #f8f9fa !important;
+      color: #000000 !important;
+      border: 2px solid #333333 !important;
+      page-break-after: always;
+      -webkit-print-color-adjust: exact;
+    }
+    .cover-title, .chapter-title, .manifesto-title, .appendix-title, .final-title {
+      background: none !important;
+      -webkit-text-fill-color: #000000 !important;
+      color: #000000 !important;
+    }
+    .day-section, .task-box, .theory-box, .warning-box, .secret-box, .info-box, .prompt-box, .contract-box, .result-box, .formula-box {
+      background: #ffffff !important;
+      border: 1px solid #444444 !important;
+      color: #000000 !important;
+      box-shadow: none !important;
+      page-break-inside: avoid;
+    }
+    h2, h3, p, span, div, td, th, li, strong, em, .day-title, .task-label, .warning-label, .secret-label { 
+      color: #000000 !important; 
+      text-shadow: none !important;
+    }
+    .cover::before, .chapter-cover::before { display: none !important; }
+    .data-table th, .data-table td { border: 1px solid #999 !important; }
+    a { text-decoration: none !important; color: #000 !important; }
   }
 </style>
 </head>
